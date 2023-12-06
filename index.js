@@ -1,6 +1,7 @@
 import express from 'express'
 import mongoose from 'mongoose'
 import 'dotenv/config'
+import router from './config/routes.js'
 
 
 // It's our variable 
@@ -18,7 +19,7 @@ app.use((req, res, next) => {
 })
 
 // End point 
-// app.use('/api', router)
+app.use('/api', router)
 
 // Start our Server
 
