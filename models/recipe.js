@@ -23,7 +23,7 @@ const recipeSchema = new mongoose.Schema({
 
 recipeSchema
   .set('toJSON', {
-    virtuals: true
+    virtuals: true,
   })
 
 export default mongoose.model('Recipe', recipeSchema)

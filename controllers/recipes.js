@@ -85,3 +85,56 @@ export const deleteRecipe = async (req, res) => {
     return res.status(400).json(error)
   }
 }
+
+// ! Review Controllers
+
+// * Create
+// Method: Post
+// Path: /recipes/:/recipeId/reviews
+
+export const createReview = async (req, res) => {
+  try {
+    const { recipeId } = req.params
+    const recipe = await Recipe.findById(recipeId)
+    if (!recipe) return res.status(404).json({ message: 'Recipe not found' })
+
+    req.body.owner = req.currentUser._id
+    
+    recipe.reviews.push(req.body)
+
+    await recipe.save()
+
+    return res.status(201).json(recipe)
+
+  } catch (error) {
+    console.log(error)
+    return res.status(400).json(error)
+  }
+}
+
+
+// * Delete Review
+// Method: Delete
+// Path: /recipes/:recipeId/reviews/:reviewId
+
+export const deleteReview = async (req, res) => {
+  try {
+    const { recipeId, reviewId } = req.params
+    const recipe = await Recipe.findById(recipeId)
+    if (!recipe) return res.status(400).json({ message: 'Recipe not found' })
+    const reviewToDelete = recipe.reviews.id(reviewId)
+    if (!reviewToDelete) return res.status(404).json({ message: 'Review not found' })
+    if (!reviewToDelete.owner.equals(req.currentUser._id)) {
+      return res.status(401).json({ message: 'Unauthorized' })
+    }
+
+    reviewToDelete.deleteOne()
+    await recipe.save()
+
+    return res.sendStatus(204)
+
+  } catch (error) {
+    console.log(error)
+    return res.status(400).json(error)
+  }
+}
