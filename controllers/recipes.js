@@ -14,6 +14,7 @@ export const getAllRecipes = async (req, res) => {
 // Path: /recipes
 export const createRecipe = async (req, res) => {
   try {
+    req.body.owner = req.currentUser._id
     const recipeToCreate = await Recipe.create(req.body)
     return res.status(201).json(recipeToCreate)
   } catch (error) {
@@ -28,7 +29,7 @@ export const createRecipe = async (req, res) => {
 export const getSingleRecipe = async (req, res) => {
   try {
     const { recipeId } = req.params
-    const recipe = await Recipe.findById(recipeId)
+    const recipe = await Recipe.findById(recipeId).populate('owner')
     if (!recipe){
       return res.status(404).json({ message: 'Recipe not found' })
     }

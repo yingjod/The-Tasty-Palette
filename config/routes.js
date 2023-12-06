@@ -7,17 +7,18 @@ import {
   deleteRecipe 
 } from '../controllers/recipes.js'
 import { register, login } from '../controllers/users.js'
+import secureRoute from './secureRoute.js'
 
 const router = express.Router()
 
 router.route('/recipes')
   .get(getAllRecipes)
-  .post(createRecipe)
+  .post(secureRoute, createRecipe)
 
 router.route('/recipes/:recipeId')
   .get(getSingleRecipe)
-  .put(updateRecipe)
-  .delete(deleteRecipe)
+  .put(secureRoute, updateRecipe)
+  .delete(secureRoute, deleteRecipe)
 
 router.route('/register')
   .post(register)

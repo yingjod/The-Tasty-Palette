@@ -21,7 +21,7 @@ async function seed(){
 
     const ownedRecipe = recipeData.map(recipe => {
       const randomUserIndex = Math.floor(Math.random() * usersCreated.length)
-      return {...recipe, owner: usersCreated[randomUserIndex]._id }
+      return { ...recipe, owner: usersCreated[randomUserIndex]._id }
     })
 
     const recipesCreated = await Recipe.create(ownedRecipe)
