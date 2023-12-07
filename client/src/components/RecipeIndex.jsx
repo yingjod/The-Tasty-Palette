@@ -67,16 +67,16 @@ export default function Recipes() {
         <Row className='recipe-list'>
           { filteredCategories.length > 0 &&
           filteredCategories.map(rec => {
-            const { _id, title, poster } = rec
+            const { id, title, poster } = rec
             return (
               <Col 
                 as={Link}
-                key={_id} 
+                key={id} 
                 xs={6} 
                 md={4} 
                 lg={3}
                 style={ { backgroundImage: `url(${poster})` } }
-                to={`/recipes/${_id}`}
+                to={`/recipes/${id}`}
               >
                 {title}
               </Col>
