@@ -1,0 +1,38 @@
+header {
+  @include flex-between(row)
+}
+
+.logo-icon {
+  width: 60px;
+}
+
+.nav-toggle {
+  background: none;
+  border: none;
+  span {
+    height: 3px;
+    display: block;
+    width: 40px;
+    background: #FF7C5E;
+    margin-bottom: 3px;
+  }
+}
+
+.modal-header {
+  flex-grow: 1;
+  background: #FF7C5E;
+  @include flex-center(column);
+  button {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+  }
+  nav {
+    @include flex-center(column);
+    a, span {
+      color: #FF7C5E;
+      text-decoration: none;
+      cursor: pointer;
+    }
+  }
+}
