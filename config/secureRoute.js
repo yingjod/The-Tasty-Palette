@@ -1,6 +1,11 @@
 import jwt from 'jsonwebtoken'
 import User from '../models/user.js'
 
+
+// Function to make the route for create, login, register, update and Delete be 
+// only possible with a token from the user that create it. 
+
+
 export default async function secureRoute(req, res, next){
   try {
     if (!req.headers.authorization) throw new Error('Missing headers')

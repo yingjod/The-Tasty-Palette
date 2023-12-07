@@ -30,3 +30,18 @@ export const login = async (req, res) => {
     return res.status(401).json({ message: 'Unauthorized' })
   }
 }
+
+
+// Profile Route
+// Method: Get
+// Path: /profile
+
+export const getProfile = async (req, res) => {
+  try {
+    const profile = await User.findById(req.currentUser._id).populate('recipesCreated')
+    return res.json(profile)
+  } catch (error) {
+    console.log(error)
+    return res.status(500).json(error)
+  }
+}

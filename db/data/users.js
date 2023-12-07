@@ -1,3 +1,5 @@
+// Users registrated in our database that can have access to the webpage.
+
 export default [
   {
     username: 'Liz',

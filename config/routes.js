@@ -8,7 +8,7 @@ import {
   createReview,
   deleteReview
 } from '../controllers/recipes.js'
-import { register, login } from '../controllers/users.js'
+import { register, login, getProfile } from '../controllers/users.js'
 import secureRoute from './secureRoute.js'
 
 const router = express.Router()
@@ -30,10 +30,17 @@ router.route('/recipres/:recipeId/reviews')
 router.route('/recipes/:recipeId/reviews/:reviewID')
   .delete(secureRoute, deleteReview)
 
+
+// Route for register and login to the new user
+
 router.route('/register')
   .post(register)
 
 router.route('/login')
   .post(login)
 
+
+// Profile route for display the profile of the user and his recipes created.
+router.route('/profile')
+  .get(secureRoute, getProfile)
 export default router

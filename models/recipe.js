@@ -11,7 +11,7 @@ const reviewSchema = new mongoose.Schema({
 const recipeSchema = new mongoose.Schema({
   title: { type: String, required: true, unique: true },
   category: { type: String, required: true },
-  description: { type: String, required: true },
+  description: { type: String },
   prepTime: { type: Number, required: true },
   ingredients: [String],
   poster: String,
