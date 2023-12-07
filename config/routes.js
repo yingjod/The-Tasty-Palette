@@ -24,7 +24,7 @@ router.route('/recipes/:recipeId')
 
 // Review
 
-router.route('/recipres/:recipeId/reviews')
+router.route('/recipes/:recipeId/reviews')
   .post(secureRoute, createReview)
 
 router.route('/recipes/:recipeId/reviews/:reviewID')
