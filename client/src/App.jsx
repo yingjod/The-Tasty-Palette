@@ -1,8 +1,11 @@
 import { useEffect } from 'react'
 import axios from 'axios'
+import Nav from './components/Nav.jsx'
+import Footer from './components/Footer.jsx'
 import { Outlet } from 'react-router-dom'
 
 function App() {
+
   useEffect(() => {
     async function getRecipeData(){
       try {
@@ -14,12 +17,14 @@ function App() {
     }
     getRecipeData()
   }, [])
-  
+
   return (
     <>
+      <Nav />
       <main>
-          <Outlet />   
+        <Outlet />
       </main>
+      <Footer />
     </>
   )
 }
