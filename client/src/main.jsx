@@ -7,7 +7,8 @@ import App from './App'
 import Home from './components/Home'
 import RecipeIndex from './components/RecipeIndex'
 
-import { getAllRecipes } from './utilities/loaders/recipes'
+import { getAllRecipes, getSingleRecipe } from './utilities/loaders/recipes'
+import SingleRecipe from './components/SingleRecipe'
 
 const router = createBrowserRouter([
   {
@@ -16,12 +17,18 @@ const router = createBrowserRouter([
     children: [
       {
         path: '/',
-        element: <Home />
+        element: <Home />,
+        
       },
       {
         path: '/recipes',
         element: <RecipeIndex />,
         loader: getAllRecipes
+      },
+      {
+        path: '/recipes/:recipeId',
+        element: <SingleRecipe />,
+        loader: getSingleRecipe
       }
     ]
   }
