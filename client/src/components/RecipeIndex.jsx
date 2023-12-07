@@ -1,0 +1,89 @@
+import { useLoaderData, Link } from 'react-router-dom'
+import { useEffect, useState } from 'react'
+
+// Bootstrap components
+import Container from 'react-bootstrap/Container'
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
+
+
+export default function Recipes() {
+  const recipe = useLoaderData()
+
+  //! State
+  const [ filters, setFilters ] = useState({
+    category: 'All',
+    search: ''
+  })
+
+  const [ categories, setCategories ] = useState([])
+  const [ filteredCategories, setFilteredCategories ] = useState([])
+
+  //! Functions
+  function handleChange(e){
+    const newObj = {
+      ...filters,
+      [e.target.title]: e.target.value
+    }
+    setFilters(newObj)
+  }
+
+  //! Effects
+  useEffect(() => {
+
+    const pattern = new RegExp(filters.search, 'i')
+    const filteredArray = recipe.filter(rec => {
+      return pattern.test(rec.title) && (rec.category === filters.category || filters.category === 'All')
+    })
+    setFilteredCategories(filteredArray)
+
+    if (recipe.length > 0 && categories.length === 0) {
+      const categoriesArr = [...new Set(recipe.map(rec => rec.category))].filter(Boolean)
+      setCategories(categoriesArr)
+    }
+  }, [filters])
+
+  return (
+    <>
+      <h1 className='title'>Recipes</h1>
+      <Container>
+        <Row>
+          <Col xs={6} md={4} lg={3}>
+            <div className="custom-select">
+              <select id="dropdown" name="category" value={filters.category} onChange={handleChange}>
+                <option value="All">All</option>
+                { categories.length > 0 &&
+                  categories.map(category => {
+                    return <option key={category} value={category}>{category}</option>
+                  })
+                }
+              </select>
+            </div>
+          </Col>
+          <Col xs={6} md={4} lg={3}>
+            <input id="search" name="search" placeholder='Search...' value={filters.search} onChange={handleChange} />
+          </Col>
+        </Row>
+        <Row className='recipe-list'>
+          { filteredCategories.length > 0 &&
+          filteredCategories.map(rec => {
+            const { _id, title, poster } = rec
+            return (
+              <Col 
+                as={Link}
+                key={_id} 
+                xs={6} 
+                md={4} 
+                lg={3}
+                style={ { backgroundImage: `url(${poster})` } }
+                to={`/recipes/${_id}`}
+              >
+                {title}
+              </Col>
+            )
+          })}
+        </Row>
+      </Container>
+    </>
+  )
+}
