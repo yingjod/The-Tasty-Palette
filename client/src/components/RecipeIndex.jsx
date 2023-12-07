@@ -23,7 +23,7 @@ export default function Recipes() {
   function handleChange(e){
     const newObj = {
       ...filters,
-      [e.target.title]: e.target.value
+      [e.target.name]: e.target.value
     }
     setFilters(newObj)
   }
