@@ -1,33 +1,32 @@
-import React from 'react'
+
 import ReactDOM from 'react-dom/client'
-import App from './App.jsx'
+import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 
-import SingleRecipe from './components/single-recipe'
+// Page components
+import App from './App'
+import Home from './components/Home'
+import RecipeIndex from './components/RecipeIndex'
 
-import { getRecipe } from './utillits/loaders/recipeLoad.js'
-import { createBrowserRouter } from 'react-router-dom'
+import { getAllRecipes } from './utilities/loaders/recipes'
 
 const router = createBrowserRouter([
   {
-    path: '/recipes/:recipeId',
-    element: <single-recipe />,
-    loader: async ({ params }) => getRecipe(params.recipeId),
+    path: '/',
+    element: <App />,
+    children: [
+      {
+        path: '/',
+        element: <Home />
+      },
+      {
+        path: '/recipes',
+        element: <RecipeIndex />,
+        loader: getAllRecipes
+      }
+    ]
   }
 ])
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ReactDOM.createRoot(document.getElementById('root')).render(
+  <RouterProvider router={router} />
 )
