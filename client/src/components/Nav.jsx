@@ -26,7 +26,7 @@ export default function Nav() {
 
       <Modal show={show} fullscreen={true} onHide={() => setShow(false)}>
         <Modal.Header closeButton>
-          <nav onClick={() => setShow(true)} className='link-container'>
+          <nav onClick={() => setShow(false)} className='link-container'>
             <Link to="/">Home</Link><br />
             <Link to="/recipes">All Recipes</Link><br />
             <Link to="/recipes/:recipeId">Single Recipe</Link><br />
