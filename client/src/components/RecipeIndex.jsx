@@ -45,19 +45,12 @@ export default function Recipes() {
 
   return (
     <>
-      <h1 className='title'>Recipes</h1>
+      <h1 className='text-center bold display-3 mb-4'>Recipes</h1>
       <Container>
         <Row>
           <Col xs={6} md={4} lg={3}>
             <div className="custom-select">
-              <select id="dropdown" name="category" value={filters.category} onChange={handleChange}>
-                <option value="All">All</option>
-                { categories.length > 0 &&
-                  categories.map(category => {
-                    return <option key={category} value={category}>{category}</option>
-                  })
-                }
-              </select>
+              {/* ... (your select options) */}
             </div>
           </Col>
           <Col xs={6} md={4} lg={3}>
@@ -78,12 +71,14 @@ export default function Recipes() {
                 style={ { backgroundImage: `url(${poster})` } }
                 to={`/recipes/${id}`}
               >
+                
                 {title}
+                
               </Col>
             )
           })}
         </Row>
       </Container>
     </>
-  )
+  );
 }

@@ -21,6 +21,7 @@ const recipeSchema = new mongoose.Schema({
   owner: { type: mongoose.ObjectId, ref: 'User', required: true },
 })
 
+
 recipeSchema
   .set('toJSON', {
     virtuals: true,

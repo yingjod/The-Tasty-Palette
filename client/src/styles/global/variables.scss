@@ -3,3 +3,35 @@ $darkgreen: #7C9070;
 $lightgreen: #9CA777;
 $yellow: #FEE8B0;
 
+%flex-fill{
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+@mixin flex($direction, $align, $justify){
+  display: flex;
+  flex-direction: $direction;
+  align-items: $align;
+  justify-content: $justify;
+}
+
+@mixin flex-center($direction){
+  display: flex;
+  flex-direction: $direction;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-between($direction){
+  display: flex;
+  flex-direction: $direction;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin bg-center($size) {
+  background-size: $size;
+  background-position: center;
+  background-repeat: no-repeat;
+}

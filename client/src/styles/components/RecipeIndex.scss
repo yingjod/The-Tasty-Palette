@@ -1,0 +1,51 @@
+.recipe-list {
+  display: flex;
+  flex-wrap: wrap;
+
+  a {
+    height: 33.33vw;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 350px 300px;
+    @include flex(row, flex-end, center);
+    text-decoration: none;
+    color: $yellow;
+    transition: background-size 0.2s;
+    
+    // Effects
+    &:hover {
+      background-size: 300px 400px;
+    }
+  
+    // Media queries
+    @media (min-width: 768px) {
+      background-size: 80%;
+      &:hover {
+        background-size: 90%;
+      }
+    }
+
+    @media (min-width: 992px) {
+      background-size: 80%;
+      &:hover {
+        background-size: 90%;
+      }
+    }
+  }
+}
+
+#dropdown, #search {
+  height: 35px;
+  width: 180px;
+  border: 1px solid $orange;
+  margin-left: 35px;
+  padding-left: 0.5rem;
+  background-color: $orange;
+  color: $yellow;
+  font-size: 15px;
+  text-shadow: 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black;
+}
+
+#search::placeholder {
+  color: $yellow;
+}
