@@ -29,7 +29,6 @@ export default function Nav() {
           <nav onClick={() => setShow(false)} className='link-container'>
             <Link to="/">Home</Link><br />
             <Link to="/recipes">All Recipes</Link><br />
-            <Link to="/recipes/:recipeId">Single Recipe</Link><br />
             <Link to="/login">Login</Link><br />
             <Link to="/register">Register</Link><br />
           </nav>
