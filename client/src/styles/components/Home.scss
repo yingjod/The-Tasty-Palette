@@ -1,0 +1,39 @@
+.custom-carousel {
+  padding-top: 50px;
+  width: 50%;
+  height: 200px; 
+  margin: auto; 
+  
+}
+
+.d-block {
+  width: 100%;
+  height: 500px;;
+  object-fit: cover;
+  object-position: center;
+}
+
+.info {
+
+  h5 {color: white;
+  font-weight: bold;
+  font-size: 25px;}
+
+  h6{color: rgb(200, 185, 185);
+    font-weight: bold;
+    font-size: 20px;
+  }
+}
+
+.textlogo{
+  width: 30%;
+}
+
+.textlogo_{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+
+}
