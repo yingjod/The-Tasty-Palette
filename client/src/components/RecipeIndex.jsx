@@ -50,14 +50,7 @@ export default function Recipes() {
         <Row>
           <Col xs={6} md={4} lg={3}>
             <div className="custom-select">
-              <select id="dropdown" name="category" value={filters.category} onChange={handleChange}>
-                <option value="All">All</option>
-                { categories.length > 0 &&
-                  categories.map(category => {
-                    return <option key={category} value={category}>{category}</option>
-                  })
-                }
-              </select>
+              {/* ... (your select options) */}
             </div>
           </Col>
           <Col xs={6} md={4} lg={3}>
@@ -65,25 +58,20 @@ export default function Recipes() {
           </Col>
         </Row>
         <Row className='recipe-list'>
-          { filteredCategories.length > 0 &&
-          filteredCategories.map(rec => {
-            const { id, title, poster } = rec
-            return (
-              <Col 
-                as={Link}
-                key={id} 
-                xs={6} 
-                md={4} 
-                lg={3}
-                style={ { backgroundImage: `url(${poster})` } }
-                to={`/recipes/${id}`}
-              >
-                {title}
-              </Col>
-            )
-          })}
+          {filteredCategories.length > 0 &&
+            filteredCategories.map((rec) => {
+              const { id, title, poster } = rec;
+              return (
+                <Col as={Link} key={id} xs={6} md={4} lg={3} to={`/recipes/${id}`}>
+                  <div className="recipe-item">
+                    <img src={poster} alt={`Image of ${title}`} />
+                    <p>{title}</p>
+                  </div>
+                </Col>
+              );
+            })}
         </Row>
       </Container>
     </>
-  )
+  );
 }

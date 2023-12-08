@@ -31,7 +31,7 @@ const router = createBrowserRouter([
       {
         path: '/recipes/:recipeId',
         element: <SingleRecipe />,
-        loader: getSingleRecipe
+        loader: async ({ params }) => getSingleRecipe(params.recipeId),
       }
     ]
   }
