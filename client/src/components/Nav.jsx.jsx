@@ -9,4 +9,6 @@
 // import Modal from 'react-bootstrap/Modal'
 
 
-export default function Nav(){}
+export default function Nav(){
+
+}

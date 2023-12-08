@@ -47,7 +47,7 @@ export default function Home() {
         </Link>
         <p>Continent: {category}</p>
         <p>{description}</p>
-        <p>{prepTime} minutes</p>
+        <p>Prep time: {prepTime} minutes</p>
       </div>
     </>
   );
