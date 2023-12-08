@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 
 // Styles
+import 'bootstrap/dist/css/bootstrap.min.css'
 import './styles/main.scss'
 
 // Page components
