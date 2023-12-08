@@ -9,12 +9,10 @@ function App() {
   return (
     <>
       <Nav />
-      <main>
-        <Outlet />
-      </main>
-      <div className='footer'>
+        <main>
+          <Outlet />
+        </main>
       <Footer />
-      </div>
     </>
   );
 }

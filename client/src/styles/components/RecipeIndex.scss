@@ -16,23 +16,6 @@
     &:hover {
       background-size: 300px 400px;
     }
-  
-    // Media queries
-    @media (min-width: 768px) {
-      background-size: 80%;
-      &:hover {
-        background-size: 90%;
-      }
-    }
-
-    @media (min-width: 992px) {
-      background-size: 80%;
-      &:hover {
-        background-size: 90%;
-      }
-    }
-  }
-}
 
 #dropdown, #search {
   height: 35px;
@@ -48,4 +31,21 @@
 
 #search::placeholder {
   color: $yellow;
+}
+
+    // Media queries
+    @media (min-width: 768px) {
+      background-size: 80%;
+      &:hover {
+        background-size: 90%;
+      }
+    }
+
+    @media (min-width: 992px) {
+      background-size: 80%;
+      &:hover {
+        background-size: 90%;
+      }
+    }
+  }
 }
