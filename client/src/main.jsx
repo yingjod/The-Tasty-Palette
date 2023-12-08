@@ -9,19 +9,25 @@ import './styles/main.scss'
 import App from './App'
 import Home from './components/Home'
 import RecipeIndex from './components/RecipeIndex'
-
-import { getAllRecipes, getSingleRecipe } from './utilities/loaders/recipes'
 import SingleRecipe from './components/SingleRecipe'
+import ErrorPage from './components/ErrorPage'
+import Register from './components/Register'
+import Login from './components/Login'
+
+
+// Loaders
+import { getAllRecipes, getSingleRecipe } from './utilities/loaders/recipes'
+
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <App />,
+    errorElement: <ErrorPage />,
     children: [
       {
         path: '/',
         element: <Home />,
-        
       },
       {
         path: '/recipes',
@@ -31,7 +37,17 @@ const router = createBrowserRouter([
       {
         path: '/recipes/:recipeId',
         element: <SingleRecipe />,
-        loader: getSingleRecipe
+        loader: async ({ params }) => getSingleRecipe(params.recipeId),
+      },
+      {
+        path: '/register',
+        element: <Register />,
+        
+      },
+      {
+        path: '/login',
+        element: <Login />,
+        
       }
     ]
   }

@@ -45,15 +45,13 @@ export default function Home() {
   return (
     <>
       <div className="recipeimg">
-        <h1 className='text-center bold display-3 mb-4'>{title}</h1>
-        <h2>{category}</h2>
-        <h2>Time:{prepTime}mins</h2>
-        <h3>{description}</h3>
+        
         <Link
           // src={image}
           key={_id}
           to={`/recipes/${_id}`}
         >
+          <h1 className='text-center bold display-3 mb-4'>{title}</h1>
           {/* <img  className='homeimg' src={image}/> */}
         </Link>
         <p>Continent: {category}</p>
