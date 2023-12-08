@@ -2,6 +2,9 @@
 import ReactDOM from 'react-dom/client'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 
+// Styles
+import './styles/main.scss'
+
 // Page components
 import App from './App'
 import Home from './components/Home'

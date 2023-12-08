@@ -1,9 +1,6 @@
-header {
-  @include flex-between(row)
-}
-
 .logo-icon {
-  width: 60px;
+  width: 70px;
+  padding-right: 1em;
 }
 
 .nav-toggle {
@@ -14,25 +11,36 @@ header {
     display: block;
     width: 40px;
     background: #FF7C5E;
-    margin-bottom: 3px;
+    margin-bottom: 8px;
   }
 }
 
-.modal-header {
-  flex-grow: 1;
-  background: #FF7C5E;
-  @include flex-center(column);
-  button {
-    position: absolute;
-    top: 2rem;
-    right: 2rem;
+nav {
+  a, span {
+    color: #FF7C5E;
+    text-decoration: none;
+    cursor: pointer;
   }
-  nav {
-    @include flex-center(column);
-    a, span {
-      color: #FF7C5E;
-      text-decoration: none;
-      cursor: pointer;
-    }
-  }
+  flex-grow: 10;
 }
+
+.p-2.p-md-3.p-lg-4{
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  flex-grow: .4;
+  align-items: center;
+  padding-left: 1em;
+}
+
+// .modal-header {
+//   flex-grow: 1;
+//   background: #FF7C5E;
+
+//   button {
+//     position: absolute;
+//     top: 2rem;
+//     right: 2rem;
+//   }
+// }
+
