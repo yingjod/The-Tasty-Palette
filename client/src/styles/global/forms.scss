@@ -1,0 +1,30 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  max-width: 100%;
+  margin: 2rem auto;
+  input, textarea {
+    width:100%;
+    border: none;
+    border-bottom: 1px solid red;
+    padding: 10px 0;
+    background-color: transparent;
+    color: #FF7C5E;
+    outline: none !important;
+  }
+  button {
+    margin-top: 1rem;
+  }
+}
+
+.submit-btn {
+  background-color: #FF7C5E;
+  color: #FEE8B0;
+  border: 1px solid #FF7C5E;
+  &:hover{
+    background-color: transparent;
+    color: #FF7C5E;
+    border: 1px solid #FF7C5E;
+  }
+}
