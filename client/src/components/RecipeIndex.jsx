@@ -45,7 +45,7 @@ export default function Recipes() {
 
   return (
     <>
-      <h1 className='title'>Recipes</h1>
+      <h1 className='text-center bold display-3 mb-4'>Recipes</h1>
       <Container>
         <Row>
           <Col xs={6} md={4} lg={3}>
@@ -78,7 +78,9 @@ export default function Recipes() {
                 style={ { backgroundImage: `url(${poster})` } }
                 to={`/recipes/${id}`}
               >
+                
                 {title}
+                
               </Col>
             )
           })}
