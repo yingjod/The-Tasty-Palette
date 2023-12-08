@@ -56,6 +56,9 @@ export default function Home() {
         >
           {/* <img  className='homeimg' src={image}/> */}
         </Link>
+        <p>Continent: {category}</p>
+        <p>{description}</p>
+        <p>Prep time: {prepTime} minutes</p>
       </div>
     </>
   )
