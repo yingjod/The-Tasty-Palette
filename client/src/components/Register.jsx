@@ -4,7 +4,6 @@ import textregister from '../images/text-register.png'
 
 export default function Register() {
 
-
   const res = useActionData()
   console.log(res)
   const navigate = useNavigate()
@@ -13,7 +12,7 @@ export default function Register() {
     if (res?.status === 201) {
       navigate('/login')
     }
-  }, [res])
+  }, [res, navigate])
 
 
   return (
@@ -26,7 +25,7 @@ export default function Register() {
         <input className="registerpass" type="password" name="password" placeholder='Password' /><br />
         <input className="registerpasscon" type="password" name="passwordConfirmation" placeholder='Confirm password' /><br /><br />
         <button className="registerbtn" type="submit">Register</button><br /><br />
-        <p>Already have an account? <Link to="/login"><span className='register-link'> Login</span></Link></p>
+        <p>Already have an account?{'\u00a0'} <Link to="/login"><span className='register-link'> Login</span></Link></p>
         {res && <p className="danger">{res.data.message}</p>}
       </Form>
     </>

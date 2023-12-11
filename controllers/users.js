@@ -25,7 +25,7 @@ export const login = async (req, res) => {
       throw new Error(!userToLogin ? 'Email not found' : 'Password don\'t match')
     }
     const token = jwt.sign({ sub: userToLogin._id }, process.env.SECRET, { expiresIn: '14d' })
-    return res.json({ message: `Welcome back ${userToLogin.username}`, token: token })
+    return res.status(202).json({ message: `Welcome back ${userToLogin.username}`, token: token })
   } catch (error) {
     console.log(error)
     return res.status(401).json({ message: 'Unauthorized' })

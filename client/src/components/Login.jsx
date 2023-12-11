@@ -5,6 +5,7 @@ import textlogin from '../images/text-login.png'
 
 export default function Login(){
   const res = useActionData()
+  console.log(res)
   const navigate = useNavigate()
   
   useEffect(() => {
@@ -23,8 +24,7 @@ export default function Login(){
         <button className='registerbtn' type="submit">Login</button>
         {res && <p className='danger'>{res.data.message}</p>}
       </Form>
-      <p>Don't have an account? <Link to="/register"><span className='register-link'> Register here</span></Link></p>
-      {res && <p className='danger'>{res.data.message}</p>}
+      <p>Don't have an account?{'\u00a0'} <Link to="/register"><span className='register-link'> Register here</span></Link></p>
     </>
   )
 }

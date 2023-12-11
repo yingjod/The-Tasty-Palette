@@ -18,7 +18,7 @@ import Login from './components/Login'
 
 // Loaders
 import { getAllRecipes, getSingleRecipe } from './utilities/loaders/recipes'
-import { registerUser } from './utilities/actions/auth'
+import { registerUser, loginUser } from './utilities/actions/auth'
 
 
 const router = createBrowserRouter([
@@ -50,7 +50,7 @@ const router = createBrowserRouter([
       {
         path: '/login',
         element: <Login />,
-
+        action: async ({ request }) => loginUser(request)
       }
     ]
   }
