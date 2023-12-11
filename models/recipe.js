@@ -18,7 +18,6 @@ const recipeSchema = new mongoose.Schema({
   ingredients: [String],
   poster: String,
   method: { type: String, required: true },
-  rating: { type: Number },
   reviews: [reviewSchema],
   owner: { type: mongoose.ObjectId, ref: 'User', required: true },
 })
@@ -26,7 +25,7 @@ const recipeSchema = new mongoose.Schema({
 recipeSchema
   .virtual('avgRating')
   .get(function () {
-    if (!this.reviews.length) return 'No reviews yet'
+    if (!this.reviews.length) return 0
     return (
       (this.reviews.reduce((acc, review) => acc + review.rating, 0) / this.reviews.length).toFixed(2)
     )

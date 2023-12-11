@@ -13,10 +13,7 @@
 }
 
 .registerform{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  @include flex-center(column)
 }
 
 .textregister{
@@ -33,6 +30,10 @@
   font-size: 20px;
   color: white;
   border:none;
+}
+
+.register {
+  padding-left: 0;
 }
 
 .registerbtn:hover {

@@ -50,6 +50,10 @@
       color: $orange;
       font-size: 15px;
     }
+
+    .stars {
+      @include flex(row, center, center);
+    }
   }
 }
 
