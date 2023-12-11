@@ -1,22 +1,27 @@
 import Nav from './components/Nav.jsx'
 import Footer from './components/Footer.jsx'
-import { Outlet } from 'react-router-dom'
+import { Outlet, useNavigation } from 'react-router-dom'
 
-
+import Spinner from 'react-bootstrap/Spinner'
 function App() {
 
-  
+  const navigation = useNavigation()  
   return (
     <>
       <Nav />
       <main>
-        <Outlet />
+        {
+          navigation.state === 'idle' ?
+          <Outlet />
+          :
+          <div className="centred">
+            <Spinner animation='border' />
+          </div>
+        }
       </main>
-      <div className='footer'>
       <Footer />
-      </div>
     </>
-  );
+  )
 }
 export default App;
 
