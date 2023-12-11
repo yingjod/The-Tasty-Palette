@@ -1,41 +1,11 @@
-// import { useLoaderData } from "react-router-dom";
-
-
-
-// export default function SingleRecipe() {
-//   const recipe = useLoaderData();
-//   const { title, description, prepTime, ingredients, method, poster, reviews } = recipe;
-
-//   return (
-//     <>
-//       <div>
-//         <h2>{title}</h2>
-//         <img src={poster} alt={`Image of ${title}`} />
-//         <p>{description}</p>
-//         <p>{prepTime} mins</p>
-//         <p>{ingredients}</p>
-//         <p>{method}</p>
-
-//         <h3>Reviews</h3>
-//         {reviews && reviews.length > 0 ? (
-//           <ul>
-//             {reviews.map((review, index) => (
-//               <li key={index}>{review.comment}</li>
-//             ))}
-//           </ul>
-//         ) : (
-//           <p>No reviews yet.</p>
-//         )}
-//       </div>
-//     </>
-//   )
-// }
 
 import { useLoaderData } from "react-router-dom";
 
 export default function SingleRecipe() {
   const recipe = useLoaderData();
-  const { title, description, prepTime, ingredients, method, poster, review } = recipe;
+  const { title, description, prepTime, ingredients, method, poster, reviews } = recipe;
+
+  console.log('Reviews:', reviews); // Add this line for debugging
 
   return (
     <>
@@ -48,12 +18,23 @@ export default function SingleRecipe() {
         <p>{method}</p>
 
         <h3>Reviews</h3>
-        {review && review.length > 0 ? (
-          <ul>
-            {review.map((review, index) => (
+        {reviews && reviews.length > 0 ? (
+          <ul style={{ listStyle: 'none', padding: 0 }}>
+            {reviews.map((review, index) => (
               <li key={index}>
-                <p>{`Rating: ${review.rating} / 5`}</p>
-                <p>{`Comment: ${review.comment}`}</p>
+                {review.rating !== undefined && (
+                  <div>
+                    <p style={{ margin: 0, padding: 0 }}>
+                      {/* Display stars based on the rating */}
+                      {Array(review.rating).fill().map((_, starIndex) => (
+                        <span key={starIndex}>★</span>
+                      ))}
+                      {/* Display the username who gave the rating */}
+                      {review.owner && review.owner.username ? ` Rated by ${review.owner.username}` : 'Unknown User'}
+                    </p>
+                    {review.text && <p>{`Comment: ${review.text}`}</p>}
+                  </div>
+                )}
               </li>
             ))}
           </ul>
@@ -64,3 +45,6 @@ export default function SingleRecipe() {
     </>
   );
 }
+
+
+

@@ -5,6 +5,7 @@ import jwt from 'jsonwebtoken'
 
 // It's for the new user registration.
 export const register = async (req, res) => {
+  console.log('hit register')
   try {
     const newUser = await User.create(req.body)
     return res.status(201).json({ message: `Welcome ${newUser.username}` })

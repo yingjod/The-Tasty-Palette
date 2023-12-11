@@ -1,51 +1,52 @@
-.recipe-list {
+.search-container {
+  @include flex(row, center, space-around);
+  padding: 20px;
+  margin: 20px;
+  background-color: $yellow;
+
+  #dropdown, #search {
+    height: 35px;
+    width: 180px;
+    margin: 5px;
+    background-color: $orange;
+    border: none;
+    padding-left: 0.5rem;
+    background-color: $orange;
+    color: $yellow;
+    font-size: 15px;
+    outline: none;
+    cursor: pointer;
+  }
+  
+  #search::placeholder {
+    color: $yellow;
+  }
+
+  @media (max-width: 457px) {
+      flex-direction: column;
+  }
+}
+
+.recipe-cards {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 
-  a {
-    height: 33.33vw;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 350px 300px;
-    @include flex(row, flex-end, center);
+  .card-layout {
     text-decoration: none;
-    color: $yellow;
-    transition: background-size 0.2s;
-    
-    // Effects
-    &:hover {
-      background-size: 300px 400px;
+    margin: 20px;
+  
+    h5 {
+      font-weight: bold;
     }
 
-#dropdown, #search {
-  height: 35px;
-  width: 180px;
-  border: 1px solid $orange;
-  margin-left: 35px;
-  padding-left: 0.5rem;
-  background-color: $orange;
-  color: $yellow;
-  font-size: 15px;
-  text-shadow: 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black;
-}
-
-#search::placeholder {
-  color: $yellow;
-}
-
-    // Media queries
-    @media (min-width: 768px) {
-      background-size: 80%;
-      &:hover {
-        background-size: 90%;
-      }
-    }
-
-    @media (min-width: 992px) {
-      background-size: 80%;
-      &:hover {
-        background-size: 90%;
-      }
+    h5, p {
+      color: $orange;
+      font-size: 15px;
     }
   }
 }
+
+
+
+

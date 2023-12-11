@@ -19,6 +19,7 @@ app.use((req, res, next) => {
 })
 
 // End point 
+//! api is not added
 app.use('/api', router)
 
 // Start our Server

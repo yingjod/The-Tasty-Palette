@@ -1,0 +1,57 @@
+.form-input {
+  height: 50px;
+  width: 300px;
+  font-size: 20px;
+  background-color: aliceblue;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.danger{
+  color: red;
+  width: 50%;
+}
+
+.registerform{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.textregister{
+  width: 30%;
+  margin-bottom: 80px;
+}
+
+.registerbtn{
+  background-color: #FF7C5E;
+  border-radius: 5px;
+  height: 50px;
+  width: 150px;
+  font-size: 20px;
+  color: white;
+  border:none;
+}
+
+.registerbtn:hover {
+  background-color: darkblue; /* Change color on hover */
+}
+
+.registerbtn:active {
+  transform: translate(1px, 1px); /* Move button 2px down on click */
+}
+
+.registeruser{
+  @extend .form-input;
+}
+
+.registeremail{
+  @extend .form-input;
+}
+.registerpass{
+  @extend .form-input;
+}
+.registerpasscon{
+  @extend .form-input;
+}

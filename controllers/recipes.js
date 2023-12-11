@@ -1,4 +1,5 @@
 import Recipe from '../models/recipe.js'
+import User from '../models/user.js'
 
 
 // Index
@@ -26,19 +27,25 @@ export const createRecipe = async (req, res) => {
 // Show
 // Method: Get
 // Path: /recipes/:recipeId
+// Assuming you have a controller function for fetching a single recipe
 export const getSingleRecipe = async (req, res) => {
+  const { recipeId } = req.params
+
   try {
-    const { recipeId } = req.params
-    const recipe = await Recipe.findById(recipeId).populate('owner')
-    if (!recipe){
+    const recipe = await Recipe.findById(recipeId)
+      .populate('reviews.owner', 'username') // Ensure reviews.owner is populated with the username
+
+    if (!recipe) {
       return res.status(404).json({ message: 'Recipe not found' })
     }
-    return res.json(recipe)
+
+    res.status(200).json(recipe)
   } catch (error) {
-    console.log(error)
-    return res.status(400).json(error)
+    console.error('Error fetching recipe:', error)
+    res.status(500).json({ error: 'Internal Server Error' })
   }
 }
+
 
 // Update
 // Method: Put
@@ -96,18 +103,35 @@ export const createReview = async (req, res) => {
   try {
     const { recipeId } = req.params
     const recipe = await Recipe.findById(recipeId)
-    if (!recipe) return res.status(404).json({ message: 'Recipe not found' })
 
-    req.body.owner = req.currentUser._id
-    
-    recipe.reviews.push(req.body)
+    if (!recipe) {
+      return res.status(404).json({ message: 'Recipe not found' })
+    }
+
+    // Get user details including username
+    const userWithUsername = await User.findById(req.currentUser._id).select('username')
+
+    // Include username in the review owner object
+    const review = {
+      text: req.body.text,
+      rating: req.body.rating,
+      owner: req.currentUser._id,
+    }
+
+    // Ensure the userWithUsername is not null before including the username
+    if (userWithUsername) {
+      review.owner.username = userWithUsername.username
+    }
+
+    recipe.reviews.push(review)
 
     await recipe.save()
 
-    return res.status(201).json(recipe)
+    // Now, recipe.reviews will contain both _id and username in the owner object
 
+    return res.status(201).json(recipe)
   } catch (error) {
-    console.log(error)
+    console.error(error)
     return res.status(400).json(error)
   }
 }
