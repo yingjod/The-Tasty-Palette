@@ -1,5 +1,6 @@
 import { useLoaderData, Link } from 'react-router-dom'
 import { useEffect, useState } from 'react'
+import textrecipe from '../images/text-recipes.png'
 
 export default function Recipes() {
   const recipe = useLoaderData()
@@ -10,24 +11,34 @@ export default function Recipes() {
     search: ''
   })
 
+  const [ selectedRating, setSelectedRating ] = useState('All')
+
   const [ categories, setCategories ] = useState([])
   const [ filteredCategories, setFilteredCategories ] = useState([])
 
   //! Functions
   function handleChange(e){
-    const newObj = {
-      ...filters,
-      [e.target.name]: e.target.value
-    }
-    setFilters(newObj)
+    if (e.target.name === 'rating') {
+      setSelectedRating(e.target.value)
+    } else {
+      const newObj = {
+        ...filters,
+        [e.target.name]: e.target.value
+      }
+      setFilters(newObj)
+    }  
   }
+
 
   //! Effects
   useEffect(() => {
+    console.log('Filters ->', filters)
+    console.log('Selected Rating->', selectedRating)
 
     const pattern = new RegExp(filters.search, 'i')
     const filteredArray = recipe.filter(rec => {
-      return pattern.test(rec.title) && (rec.category === filters.category || filters.category === 'All')
+      return pattern.test(rec.title) && (rec.category === filters.category || filters.category === 'All') &&
+      (selectedRating === 'All' || rec.avgRating === parseFloat(selectedRating))
     })
     setFilteredCategories(filteredArray)
 
@@ -35,16 +46,16 @@ export default function Recipes() {
       const categoriesArr = [...new Set(recipe.map(rec => rec.category))].filter(Boolean)
       setCategories(categoriesArr)
     }
-  }, [filters])
+  }, [filters, selectedRating])
 
 
     return (
       <>
-        <h1 className='text-center bold display-3 mb-4'>Recipes</h1>
+        <img src={textrecipe} className="textrecipe"></img>
         <div className='search-container'>
           <div className="custom-select">
             <select id="dropdown" name="category" value={filters.category} onChange={handleChange}>
-              <option value="All">All</option>
+              <option value="All" default>Continents</option>
               { categories.length > 0 &&
                 categories.map(category => {
                   return <option key={category} value={category}>{category}</option>
@@ -52,17 +63,28 @@ export default function Recipes() {
               }
             </select>
           </div>
+          <div className="custom-select">
+            <select id="rating-dropdown" name="rating" value={selectedRating} onChange={handleChange}>
+              <option value="All" default>Ratings</option>
+              <option value="one">⭐️</option>
+              <option value="two">⭐️⭐️</option>
+              <option value="three">⭐️⭐️⭐️</option>
+              <option value="four">⭐️⭐️⭐️⭐️</option>
+              <option value="five">⭐️⭐️⭐️⭐️⭐️</option>
+            </select>
+          </div>
           <input id="search" name="search" placeholder='Search...' value={filters.search} onChange={handleChange} />
         </div>
         <div className="recipe-cards">
         {filteredCategories.sort((a, b) => a.title < b.title ? -1 : 1).map(rec => {
-          const { id, title, poster, prepTime } = rec
+          const { id, title, poster, prepTime, avgRating } = rec
           return (
               <Link key={id} to={`/recipes/${id}`} className="card-layout">
                 <div className="card" style={{width: '20rem'}}>
                   <img className="card-img-top" src={poster} alt={title} style={{height: '150px', objectFit: 'cover'}}/>
                   <div className="card-body">
                     <h5 className="text-center bold card-title">{title}</h5>
+                    <p className="text-center card-text">{avgRating}</p>
                     <p className="text-center card-text">Total Time: {prepTime}</p>
                   </div>
                 </div> 
