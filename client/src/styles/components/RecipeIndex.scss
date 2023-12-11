@@ -1,10 +1,16 @@
+.textrecipe {
+  width: 30%;
+  margin: 50px auto;
+  display: block;
+}
+
 .search-container {
   @include flex(row, center, space-around);
   padding: 20px;
   margin: 20px;
   background-color: $yellow;
 
-  #dropdown, #search {
+  #dropdown, #search, #rating-dropdown {
     height: 35px;
     width: 180px;
     margin: 5px;
