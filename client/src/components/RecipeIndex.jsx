@@ -36,7 +36,7 @@ export default function Recipes() {
     const pattern = new RegExp(filters.search, 'i')
     const filteredArray = recipe.filter(rec => {
       return pattern.test(rec.title) && (rec.category === filters.category || filters.category === 'All') &&
-      (selectedRating === 'All' || parseInt(rec.avgRating) === parseFloat(selectedRating))
+      (selectedRating === 'All' || parseFloat(rec.avgRating) === parseFloat(selectedRating))
       
     })
     setFilteredCategories(filteredArray)
