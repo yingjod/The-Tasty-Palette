@@ -28,3 +28,19 @@
     border: 1px solid #FF7C5E;
   }
 }
+
+p {
+  display: flex;
+  justify-content: center;
+}
+
+.register-link {
+  color: #FF7C5E;
+  font-weight: bold;
+}
+
+p {
+  a, span {
+    text-decoration: none;
+  }
+}
