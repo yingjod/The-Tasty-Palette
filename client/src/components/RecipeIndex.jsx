@@ -1,6 +1,7 @@
 import { useLoaderData, Link } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import textrecipe from '../images/text-recipes.png'
+import renderStars from './Stars.jsx'
 
 export default function Recipes() {
   const recipe = useLoaderData()
@@ -19,7 +20,8 @@ export default function Recipes() {
   //! Functions
   function handleChange(e){
     if (e.target.name === 'rating') {
-      setSelectedRating(e.target.value)
+      const ratingValue = e.target.value === 'All' ? 'All' : parseFloat(e.target.value, 10)
+      setSelectedRating(ratingValue)
     } else {
       const newObj = {
         ...filters,
@@ -29,16 +31,16 @@ export default function Recipes() {
     }  
   }
 
-
   //! Effects
   useEffect(() => {
-    console.log('Filters ->', filters)
-    console.log('Selected Rating->', selectedRating)
 
     const pattern = new RegExp(filters.search, 'i')
     const filteredArray = recipe.filter(rec => {
+      console.log('avgRating ->', parseFloat(rec.avgRating))
+      console.log('selectedRating ->', parseFloat(selectedRating))
+      console.log('Reviews->',rec.reviews)
       return pattern.test(rec.title) && (rec.category === filters.category || filters.category === 'All') &&
-      (selectedRating === 'All' || rec.avgRating === parseFloat(selectedRating))
+      (selectedRating === 'All' || parseFloat(rec.avgRating) ===  parseFloat(selectedRating))
     })
     setFilteredCategories(filteredArray)
 
@@ -66,11 +68,11 @@ export default function Recipes() {
           <div className="custom-select">
             <select id="rating-dropdown" name="rating" value={selectedRating} onChange={handleChange}>
               <option value="All" default>Ratings</option>
-              <option value="one">⭐️</option>
-              <option value="two">⭐️⭐️</option>
-              <option value="three">⭐️⭐️⭐️</option>
-              <option value="four">⭐️⭐️⭐️⭐️</option>
-              <option value="five">⭐️⭐️⭐️⭐️⭐️</option>
+              <option value={1}>⭐️</option>
+              <option value={2}>⭐️⭐️</option>
+              <option value={3}>⭐️⭐️⭐️</option>
+              <option value={4}>⭐️⭐️⭐️⭐️</option>
+              <option value={5}>⭐️⭐️⭐️⭐️⭐️</option>
             </select>
           </div>
           <input id="search" name="search" placeholder='Search...' value={filters.search} onChange={handleChange} />
@@ -84,7 +86,7 @@ export default function Recipes() {
                   <img className="card-img-top" src={poster} alt={title} style={{height: '150px', objectFit: 'cover'}}/>
                   <div className="card-body">
                     <h5 className="text-center bold card-title">{title}</h5>
-                    <p className="text-center card-text">{avgRating}</p>
+                    <div className="stars">{renderStars(avgRating)}</div>
                     <p className="text-center card-text">Total Time: {prepTime}</p>
                   </div>
                 </div> 
