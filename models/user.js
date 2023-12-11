@@ -28,10 +28,22 @@ userSchema
     this._passwordConfirmation = value
   })
 
-userSchema.pre('validate', function(next){
+userSchema.pre('validate', async function(next){
   if (this.isModified('password') && this.password !== this._passwordConfirmation) {
     this.invalidate('passwordConfirmation', 'Make sure the password match')
   }
+
+  const existingUsername = await this.constructor.findOne({ username: this.username })
+  if (existingUsername && existingUsername._id.toString() !== this._id.toString()) {
+    this.invalidate('username', 'Username already exists')
+  }
+
+  const existingEmail = await this.constructor.findOne({ email: this.email });
+  if (existingEmail && existingEmail._id.toString() !== this._id.toString()) {
+    this.invalidate('email', 'Email already exists')
+  }
+
+
   next()
 })
 
