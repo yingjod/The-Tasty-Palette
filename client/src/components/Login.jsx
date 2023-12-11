@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import { useEffect } from 'react'
 import { Form, useActionData, useNavigate, Link } from 'react-router-dom'
 import { setToken } from '../utilities/helpers/common'
@@ -9,7 +10,7 @@ export default function Login(){
   useEffect(() => {
     if (res?.status === 202){
       setToken(res.data.token)
-      navigate('/bread')
+      navigate('/recipes')
     }
   }, [res, navigate])
 

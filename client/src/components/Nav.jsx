@@ -12,6 +12,10 @@ export default function Nav() {
 // ! State
   const [show, setShow] = useState(false)
 
+  // function handleLogOut(){
+  //   removeToken()
+  //   Navigate('/login')
+  // }
 
   return (
     <>

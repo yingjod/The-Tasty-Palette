@@ -13,7 +13,7 @@ export default function Register() {
     if (res?.status === 201) {
       navigate('/login')
     }
-  }, [res])
+  }, [res, navigate])
 
 
   return (

@@ -4,8 +4,8 @@ export async function getAllRecipes(){
   return res.json()
 }
 
-export async function getSingleRecipe(id){
-  const res = await fetch(`/api/recipes/${id}`)
+export async function getSingleRecipe(_id){
+  const res = await fetch(`/api/recipes/${_id}`)
   console.log(res)
   return res.json()
 }

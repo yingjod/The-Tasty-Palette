@@ -39,7 +39,7 @@ userSchema.pre('validate', async function(next){
     this.invalidate('username', 'Username already exists')
   }
 
-  const existingEmail = await this.constructor.findOne({ email: this.email });
+  const existingEmail = await this.constructor.findOne({ email: this.email })
   if (existingEmail && existingEmail._id.toString() !== this._id.toString()) {
     this.invalidate('email', 'Email already exists')
   }
