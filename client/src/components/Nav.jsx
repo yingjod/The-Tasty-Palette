@@ -42,7 +42,7 @@ export default function Nav() {
             <Link to="/recipes">All Recipes</Link>
             { activeUser() ?
               <>                
-                <Link to="/recipes">Test</Link>
+                <Link to="/recipes/create">Create</Link>
                 <span className='logout' onClick={handleLogOut}>Log out</span>
               </>
               :

@@ -1,0 +1,63 @@
+.create-form-input {
+  height: 50px;
+  width: 500px;
+  font-size: 20px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-top: 10px;
+}
+
+
+.createform {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 50px;
+
+}
+
+.textcreate {
+  width: 30%;
+  margin-bottom: 80px;
+  margin-top: 80px;
+}
+
+.formstlying {
+  background-color: rgba(246, 217, 217, 0.807);
+  padding: 50px;
+  border-radius: 10px;
+}
+
+.createcategory ,
+.createtittle ,
+.createprepTime,
+.createingredients,
+.createposter,
+{
+  @extend .create-form-input;
+}
+
+.createdescription,
+.createmethod {
+  @extend .create-form-input;
+  height: 200px;
+}
+
+.createbtn{
+  background-color: #FF7C5E;
+  border-radius: 5px;
+  height: 50px;
+  width: 150px;
+  font-size: 20px;
+  color: white;
+  border:none;
+}
+
+.createbtn:hover {
+  background-color: darkblue; /* Change color on hover */
+}
+
+.createbtn:active {
+  transform: translate(1px, 1px); /* Move button 2px down on click */
+}

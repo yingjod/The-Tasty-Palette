@@ -41,6 +41,7 @@ router.route('/login')
   .post(login)
 
 
+
 // Profile route for display the profile of the user and his recipes created.
 router.route('/profile')
   .get(secureRoute, getProfile)
