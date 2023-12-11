@@ -10,6 +10,7 @@ import {
 } from '../controllers/recipes.js'
 import { register, login, getProfile } from '../controllers/users.js'
 import secureRoute from './secureRoute.js'
+import { registerUser } from '../client/src/utilities/actions/auth.js'
 
 const router = express.Router()
 

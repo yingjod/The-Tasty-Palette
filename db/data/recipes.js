@@ -6,6 +6,7 @@ export default [
     prepTime: 70,
     ingredients: ['Flour', 'Butter', 'Salt', 'Pepper', 'Chicken', 'Oil', 'Spices'],
     method: 'Chicken pie',
+    poster: 'https://food-images.files.bbci.co.uk/food/recipes/chicken_pie_24044_16x9.jpg'
   },
   {
     title: 'Spicy Korean Tacos',
@@ -287,6 +288,356 @@ export default [
     '1 to 2 teaspoons toasted sesame oil'],
     method: 'Crack the eggs into a small bowl and beat them together.Heat a skillet with 1 tablespoon of the oil over medium-high heat. Once the pan is hot, add the beaten eggs and scramble them for about a minute. Transfer the eggs to a dish and turn off the heat.Drizzle the remaining 2 tablespoons of oil into a wok over high heat. Add the onions and cook them for about 1 to 2 minutes, stirring constantly. Add the mixed vegetables and white parts of the scallions and cook for 2 minutes. Season the vegetables with a pinch of salt.Add the cooked rice into the pan or wok and cook for several minutes, until the rice is heated through. If there are large clumps of rice, break them apart with the back of your spatula.Add the soy sauce, five-spice powder, dash of white pepper (if using) and sesame oil and stir to distribute the seasonings. (See note 6) Add the scrambled eggs and stir to mix again. Garnish with remaining sliced scallions. Serve immediately.',
     poster: 'https://healthynibblesandbits.com/wp-content/uploads/2018/02/Egg-Fried-Rice-10.jpg'
+  },
+  {
+    title: 'Crispy Fried Egg',
+    category: 'Asia',
+    description: 'Make your stir-fries, curries or rice even more egg-cellent thanks to this popular Thai staple. It\'s the absolute crowning glory!',
+    prepTime: 3,
+    ingredients: ['1 cup vegetable oil', '1 egg'],
+    method: 'Use a spatula to baste the hot oil over the egg. Do this for 1-2minutes or until the egg forms a crispy golden edge.',
+    poster: 'https://www.marionskitchen.com/wp-content/uploads/2020/04/Crispy-Fried-Eggs1.jpg'
+  },
+  {
+    title: 'Tomato and Egg Stir Fry',
+    category: 'Asia',
+    description: 'Tender tomatoes and scrambled eggs are stir fried with aromatics and very simple seasonings and served with rice.',
+    prepTime: 5,
+    ingredients: ['Tomato, sliced into wedge', 'Eggs, beaten', 'Minced garlic'], 
+    method: 'Scramble the eggs and transfer them to a plate,Gently cook the garlic,Cook the tomato until softened,Add back the eggs and season with salt and sugar.',
+    poster: 'https://omnivorescookbook.com/wp-content/uploads/2022/10/220810_Tomato-Egg-Stir-Fry_1.jpg'
+  },
+  {
+    title: 'Scrambled Eggs With Salted Chilies',
+    category: 'Asia',
+    description: 'Make these fluffy Chinese scrambled eggs with salted chilies and garlic chives for breakfast, lunch, or dinner!',
+    prepTime: 7,
+    ingredients: ['6 large eggs',
+    '1/2 teaspoon sesame oil',
+    '1/8 teaspoon white pepper',
+    '1 teaspoon cornstarch',
+    '3 tablespoons neutral oil',
+    '1/3 cup Chinese garlic chives',
+    '1/4 cup Hunan salted chilies'
+    ],    
+    method: 'Fry everything together.',
+    poster: 'https://thewoksoflife.com/wp-content/uploads/2022/11/fluffy-chinese-scrambled-eggs-chives-duo-jiao-8.jpg'
+  },
+  {
+    title: 'Scrambled Eggs With Chives',
+    category: 'Asia',
+    description: 'This recipe for Chinese scrambled eggs is made with Chinese garlic chives',
+    prepTime: 5,
+    ingredients: ['1 bunch Chinese garlic chives',
+    '4 large eggs',
+    '2 tablespoons vegetable oil, or peanut oil',
+    '1 1/2 teaspoons light soy sauce, or up to 1/2 teaspoon salt'],
+    method: 'Beat eggs in a medium bowl. Add 1 teaspoon vegetable or peanut oil, soy sauce or salt, and pepper.Heat a heavy skillet over medium-high heat.Add remaining oil, lifting the frying pan so that the oil covers the bottom of the pan. When oil is hot, add chives.Stir-fry briefly, then add beaten egg mixture.Reduce heat to medium and gently scramble eggs.Remove from heat when just done, but still moist.',
+    poster: 'https://www.thespruceeats.com/thmb/2P5-mVIzOmVazOXYom5zdGoIn0E=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/GettyImages-677186493-581aaf2c3df78cc2e89ad989.jpg'
+  },
+  {
+    title: 'Chinese Greens Recipe',
+    category: 'Asia',
+    description: 'Introducing a super-fast and easy Chinese greens recipe that helps you prepare many types of green leafy vegetables. All you need is four ingredients and 10 minutes to serve a delicious and healthy side dish with your Chinese dinner.',
+    prepTime: 15,
+    ingredients: ['Pinch of salt and vegetable oil , to blanch greens',
+    '1 small batch (about 4 cups / 300 g) Chinese greens ',
+    '2 tablespoons peanut oil ',
+    '4 cloves garlic',
+    '1 tablespoon light soy sauce'],    
+    method: 'Bring a medium pot of water to a boil. Add a pinch of salt and several drops of vegetable oil so that the blanched vegetables will look greener (optional), stir to mix well. Add the vegetables. Blanch until just cooked through and still crisp. It takes 1 minute or so to cook tender vegetables such as spinach, baby bok choy, yu choy, chard, and choy sum. It takes 2 to 3 minutes for Chinese broccoli, broccoli, and broccolini. Once the vegetables are done, immediately rinse them with cold tap water to stop cooking. Stop once the vegetables have cooled to a warm temperature and not completely cold. Drain, gently squeezing out as much water as you can, then set aside in a strainer to dry further. If you plan to serve them immediately, you can use paper towels to pat the vegetables dry. When you\'re ready to serve, plate the blanched vegetables with minimal overlapping. Heat the oil in a small saucepan or skillet over medium-high heat until hot. Add the garlic, stirring constantly until the edges of the garlic turns golden. Then immediately pour the hot oil with the garlic over the plated vegetables. Drizzle soy sauce on top of vegetables and serve immediately as a side dish.', 
+    poster: 'https://omnivorescookbook.com/wp-content/uploads/2021/12/211214_An-Easy-Chinese-Greens-Recipe_1.jpg'
+  },
+  {
+    title: 'Poached Chicken',
+    category: 'Asia',
+    description: 'Authentic Chinese Poached Chicken ( bai qie ji), is a special dish. It is both deceptively simple and delicious, served with minced ginger, scallions, oil, and salt.',
+    prepTime: 70,
+    ingredients: ['3-4 pound whole chicken',
+    '2 scallions',
+    '5 slices ginger',
+    '3 tablespoons scallions',
+    '2 tablespoons ginger ',
+    '3 tablespoons oil',
+    'salt ',
+    'soy sauce'
+    ],    
+    method: 'Make the poached chicken.',
+    poster: 'https://thewoksoflife.com/wp-content/uploads/2019/11/white-cut-chicken-18.jpg'
+  },
+  {
+    title: 'Real Deal Sesame Noodles',
+    category: 'Asia',
+    description: 'Sesame noodles are a perfect dish for a hot summer night when you don\'t feel like standing in front of a hot stove. The nutty savory sauce that has a hint of sweetness and spiciness, it\'s always a crowd pleaser. You can simply serve it without any toppings as a side dish. You top it with fresh summer produce and serve it as an appetizer for your grilling party. Or you can load it up with more toppings to serve it as a main.',
+    prepTime: 10,
+    ingredients: ['9 ounces (250 g) dried wheat noodles',
+    '1/4 cup Chinese sesame paste',
+    '2 to 4 tablespoons warm water',
+    '2 tablespoons light soy sauce',
+    '2 tablespoons Chinkiang vinegar',
+    '1 tablespoon maple syrup',
+    '2 teaspoons homemade chili oil',
+    '1 teaspoon sesame oil',
+    '1 teaspoon ginger , minced',
+    '2 cloves garlic',
+    '1/8 teaspoon freshly ground Sichuan peppercorn powder'
+    ],    
+    method: 'Add Chinese sesame paste to a medium size bowl and slowly add 2 tablespoons water, a little at a time. Stir with a spatula until the water is fully incorporated and it forms a smooth paste.One liquid ingredient at a time, add light soy sauce, Chinkiang vinegar, maple syrup, chili oil, and sesame oil, fully stir to incooperate each ingredient before adding the next one.Add the ginger, garlic, and Sichuan peppercorn powder. Stir to mix well. You can make the sauce ahead of time and store it in the fridge for 2 to 3 days.Boil noodles according to instructions. Transfer cooked noodles into a colander, rinse with tap water to stop the cooking. Drain well and transfer to small serving bowls.Serve the noodles with the sauce on the side with toppings of your preference.To eat, assemble your own bowl with any toppings you prefer, add a few spoonsful of the sauce. Mix and enjoy.',
+    poster: 'https://omnivorescookbook.com/wp-content/uploads/2021/08/210728_Chinese-Sesame-Noodles_3.jpg'
+  },
+  {
+    title: 'Brazilian Cheese Bread',
+    category: 'South America',
+    description: 'Pao de queijo are yummy gluten-free, wheat-free breads that are good for those with celiac disease or gluten intolerance. Serve them plain or with marinara sauce. For more variety, try adding an herb seasonings, such as Italian seasoning, or try substituting other cheeses for the Parmesan.',
+    prepTime: 40,
+    ingredients: ['½ cup olive oil or butter', '⅓ cup water', '⅓ cup milk or soy milk', '1 teaspoon salt',
+    '2 cups tapioca flour',
+    '2 teaspoons minced garlic',
+    '⅔ cup freshly grated Parmesan cheese',
+    '2 beaten eggs'],
+    method: 'Preheat the oven to 375 degrees F (190 degrees C). Combine olive oil, water, milk, and salt in a large saucepan and place over high heat. Bring to a boil and immediately remove from the heat. Stir in tapioca flour and garlic, stirring until smooth. Set aside to rest for 10 to 15 minutes. Stir cheese and eggs into tapioca mixture until combined; the dough will be chunky, like cottage cheese. Drop dough by 1/4 cup-size balls onto an ungreased baking sheet. Bake in the preheated oven until the tops are lightly browned, 15 to 20 minutes.',
+    poster: 'https://www.elmundoeats.com/wp-content/uploads/2023/07/Brazilian-cheese-bread-2.jpg'
+  },
+  {
+    title: 'Classic Beef Empanadas',
+    category: 'South America',
+    description: 'This authentic empanada recipe is for Argentinian beef empanadas filled with a savory and delicious mixture of ground beef, hard-cooked eggs, green olives, and potatoes. These classic empanadas are ubiquitous all over Argentina.',
+    prepTime: 90,
+    ingredients: ['2 medium potatoes',
+    '1 tablespoon butter',
+    '2 onion, chopped',
+    '3 green onions, chopped',
+    '1 red bell pepper, chopped',
+    '1 pound lean ground beef',
+    '1 teaspoon paprika',
+    '½ teaspoon cayenne pepper',
+    'salt to taste',
+    '¾ cup green olives, pitted and chopped',
+    '2 hard-cooked eggs',
+    '1 tablespoon olive oil',
+    '24 empanada pastry rounds',
+    '1 egg, lightly beaten'], 
+    method: 'Place potatoes in a large pot and cover with water; bring to a boil. Reduce heat to medium-low and simmer until barely tender, about 8 minutes. Drain. Once cool enough to handle, peel and cut into cubes. Set aside. Meanwhile, melt butter in a large skillet and cook onion and green onions until softened, about 5 minutes. Add bell pepper and cook for 3 minutes. Add ground beef; cook and stir until beef is browned, about 5 minutes. Season with paprika, cayenne pepper, and salt. Remove beef mixture from heat; add potatoes and olives. Stir in chopped hard-cooked eggs; set filling aside to cool, about 20 minutes. Preheat the oven to 425 degrees F (220 degrees C). Line 2 baking sheets with aluminum foil and lightly grease with olive oil. Place an empanada pastry round on a flat surface and lightly wet the edges with warm water. Put a large tablespoon of cooled filling in the center and fold dough over. Seal edges by pressing with a fork. Repeat with remaining rounds and filling. Transfer empanadas to the prepared baking sheets and brush with beaten egg. Bake in the preheated oven until golden brown, 15 to 20 minutes.',
+    poster: 'https://www.lunchbox.eu/wp-content/uploads/2023/10/Mice-Meat-Empanagas-2.jpg'
+  },
+  {
+    title: 'Feijoada (Brazilian Black Bean Stew)',
+    category: 'South America',
+    description: 'This feijoada recipe is my version of a traditional Brazilian black bean stew that maintains the rich smoky, flavors famous in Brazil. Additional meats, including sausage, may be added if desired. This is excellent served over brown rice.',
+    prepTime: 50,
+    ingredients: ['1 tablespoon olive oil',
+    '1 ½ cups chopped onion, divided',
+    '½ cup green onions, chopped',
+    '1 clove garlic, chopped',
+    '1 (12 ounce) package dry black beans, soaked overnight',
+    ' 2 smoked ham hocks',
+    '8 ounces diced ham',
+    '½ pound thickly sliced bacon, diced',
+    '2 bay leaves, crushed',
+    '⅛ teaspoon ground coriander',
+    'salt and pepper to taste',
+    '½ cup chopped fresh cilantro (Optional)',
+    '¼ cup chopped fresh parsley (Optional)'], 
+    method: 'Heat oil in a large pot or Dutch oven. Add 3/4 cup chopped onion, green onions, and garlic; cook and stir until softened, about 4 minutes. Pour in soaked beans and fill with enough water to cover beans by 3 inches. Bring to a boil, then reduce heat to medium-low, and simmer uncovered for 2 hours, or until tender. While beans are cooking, place ham hocks in a smaller pot with 1/4 cup chopped onion. Cover with water and simmer until meat pulls off of the bone easily, about 1 hour. Drain and add to beans. Meanwhile, preheat the oven to 375 degrees F (190 degrees C). Place ham, bacon, and remaining onion in a baking dish. Bake until mixture is crispy, 15 minutes. Drain bacon and ham mixture and add to beans. Season with bay leaves, coriander, salt, and pepper. Simmer, uncovered, 30 minutes more.',
+    poster: 'https://www.allrecipes.com/thmb/kpVWuI8qoHnh6T8ELCbqlb6N3_8=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/351366-feijoada-brazilian-black-bean-stew-Melissa-Goff-4x3-1-0fb041cc43234fedb23d171172e65a10.jpg'
+  },
+  {
+    title: 'Ceviche Peruano',
+    category: 'South America',
+    description: 'This ceviche is the best you will ever have. It is from Peru and I love making it every time I have friends and family over.',
+    prepTime: 120,
+    ingredients: ['2 potatoes', '2 sweet potatoes', '1 red onion, cut into thin strips', '1 cup fresh lime juice', '½ stalk celery', '¼ cup lightly packed cilantro leaves', '1 pinch ground cumin', '1 clove garlic', '1 habanero pepper', 'Salt and freshly ground pepper to taste', '1 pound fresh tilapia', '1 pound medium shrimp', '1 Boston lettuce'],
+    method: 'Place the potatoes and sweet potatoes in a saucepan and cover with water. Simmer until the potatoes are easily pierced with a fork, then drain, and set aside to cool to room temperature. Place the sliced onion in a bowl of warm water, let it stand for 10 minutes, then drain and set aside. Meanwhile, place the lime juice, celery, cilantro, and cumin into the bowl of a blender, and puree until smooth. Pour this mixture into a large glass bowl, and stir in the garlic and habanero pepper. Season with salt and pepper, then stir in the diced tilapia and shrimp. Set aside to marinate for an hour, stirring occasionally. The seafood is done once it turns firm and opaque. To serve, peel the potatoes and cut into slices. Stir the onions into the fish mixture. Line serving bowls with lettuce leaves. Spoon the ceviche with its juice into the bowls and garnish with slices of potato.',
+    poster: 'https://images.eatsmarter.com/sites/default/files/styles/max_size/public/peruvian-ceviche-674633.jpg'
+  },
+  {
+    title: 'Alfajores',
+    category: 'South America',
+    description: 'Alfajores are a traditional South American shortbread-like biscuit sandwich with dulce de leche filling. This recipe was created by Matt Moran for The Great Australian Bake Off technical challenge. Bake up a storm and see how you stack up against the competition!',
+    prepTime: 50,
+    ingredients: ['170g unsalted butter, at room temperature', '130g caster sugar', '1 large lemon', '2 egg yolks', '2 tsp brandy', '1 tsp vanilla extract', '180g cornflour', '120g plain flour', '1 tsp baking powder', '1/4 tsp table salt', '300g dark chocolate', '1 tbsp shredded coconut', 'dulce de leche', '60ml full cream milk', '60g white sugar', '40g unsalted butter', '395g can sweetened condensed milk'],
+    method: 'Line 2 baking trays with baking paper and place in the freezer to chill. Use a stand mixer on medium speed to beat butter, caster sugar and lemon rind until pale and creamy. Add egg yolks, brandy and vanilla. Beat until combined, scraping down side of bowl. Sift cornflour, flour, baking powder and salt over the butter mixture. Mix on low, just long enough to make a cohesive dough. Remove dough from mixer, flatten into a disc and wrap with plastic wrap. Place in the fridge to rest. Fill a large bowl with iced water. Place a medium heatproof bowl on top. Set aside. To make the dulce de leche, warm the milk in a small saucepan over medium‐low heat until warm. Meanwhile, place white sugar in a large saucepan. Stir over low heat until dissolved. Continue to cook until deep amber. (Do not boil.) Carefully add butter, 1 tbs at a time, stirring to incorporate after each addition. Slowly add the warm milk to the sugar mixture, stirring, until completely liquid and smooth. Add condensed milk. Bring to a gentle boil. Stir over medium high heat for 4 to 5 minutes or until thickened and deep caramel in colour. Use a spatula to pass the dulce de leche through a sieve into the bowl set over the iced water. Stir until cooled slightly. Spoon into a large piping bag and place in the fridge until cooled completely. Preheat oven to 195C/175C fan oven. Roll out dough to about 5mm thick. Use a 4cm diameter round pastry cutter to cut out 40 rounds. Place on prepared chilled trays. Return to fridge for at least 5 minutes to chill. Bake for 8 to 10 minutes or until evenly cooked and light in colour. Set aside on trays for 5 minutes to cool slightly. Transfer the biscuits to a wire rack to cool completely. Place the chocolate in a small, deep heatproof glass bowl over a saucepan of simmering water (make sure the bowl doesn\'t touch the water). Stir until melted and smooth. Remove from heat. Set aside.',
+    poster: 'https://img.taste.com.au/EWd-xc2G/w720-h480-cfill-q80/taste/2016/11/chilled-colombian-avocado-soup-105296-1.jpeg'
+  },
+  {
+    title: 'Homemade Pesto Recipe',
+    category: 'Europe',
+    description: 'Pesto is widely available pre-made, but no processed container of green stuff can hold a candle to homemade pesto. When the basil starts coming on strong in your garden or at the market in the summer months, it\'s time to break out the food processor and start making pesto. A little of this aromatic sauce will go a long way—don\'t be surprised if you find yourself reaching for spoonfuls to go with pasta, fish, steak, and so much more.',
+    prepTime: 25,
+    ingredients: ['5 cups fresh basil leaves', '4 cloves garlic', '1/2 cup extra-virgin olive oil', '2 tablespoons lemon juice', '1/4 teaspoon fine sea salt', '1/2 cup lukewarm water', '1/4 cup pine nuts', '1/2 cup shredded Parmesan cheese'],
+    method: 'Gather the ingredients. If you\'re blanching the basil, do it now. Peel and roughly chop the garlic. Put the basil, garlic, olive oil, lemon juice, and salt in a blender or food processor. Whirl until completely pureed, scraping down the sides as necessary to keep the mixture uniform. Add up to 1/2 cup water to keep the mixture blending and smooth (adding more oil will just make the mixture oily and likely to separate when you serve it). Add the pine nuts and cheese and pulse until chopped and well incorporated. Serve with hot pasta or refrigerate, covered, up to one week or freeze up to six months.',
+    poster: 'https://www.thespruceeats.com/thmb/DXTFUrboXSP20zlAjN8rD_tJZMI=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/homemade-pesto-2217591-hero-01-d74a4ededffe46028b53460776dca5ab.jpg'
+  },
+  {
+    title: 'Pasta Alfredo',
+    category: 'Europe',
+    description: 'Classic fettuccine Alfredo was created in 1914 by Alfredo di Lelio at his restaurant Alfredo\'s. Like other notable Roman pasta dishes cacio e pepe and spaghetti alla carbonara, fettuccine Alfredo is an emulsion of butter, pasta water, and Parmigiano Reggiano.',
+    prepTime: 25,
+    ingredients: ['Kosher salt', '1 pound fresh fettuccine', '4 ounces unsalted butter', '1 cup freshly grated Parmigiano Reggiano', 'Freshly ground black pepper'],
+    method: 'Bring a large pot of water to a boil. Salt the water liberally and taste it. It should taste like sea water. Add the pasta and cook according to package directions until al dente. Reserve 1 cup pasta water before draining the pasta. Return 3/4 cup of the reserved pasta water to the same pot over medium-low heat. Slowly add butter, a few pieces at a time, whisking until butter is melted before adding more. Add cheese a little at a time, whisking until melted. The sauce should start to achieve a smooth, thickened texture. Make sure there are no visible pieces of cheese before you add more. Add pasta to pot and toss with tongs until well coated and the sauce is velvety and smooth, about 1 minute. Use remaining 1/4 cup pasta water to thin if needed. Finish with freshly ground pepper. Serve immediately.',  
+    poster: 'https://www.thespruceeats.com/thmb/8gBHuwiNEWGn4NDm7zuNJ8PWTBE=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/pasta-alfredo-recipe-6825938-hero-06-df435d44798549f5b8fd8c29fd267eaf.jpg'
+  },
+  {
+    title: 'Classic Greek Eggplant Moussaka',
+    category: 'Europe',
+    description: 'Moussaka is a classic Greek casserole. It\'s made with layers of eggplant, potato, meaty lamb sauce, and cheese topped with an egg-enriched béchamel sauce that crisps up and becomes golden brown in the oven. While moussaka can be time-consuming to prepare, it\'s worth the effort—so hearty and filling that a simple salad is the perfect side dish to this complete meal.',
+    prepTime: 20,
+    ingredients: ['4 eggplants', 'Kosher salt', '1/3 cup olive oil', '1 pound potatoes', '8 large eggs whites and yolks separated', '2 cups plain breadcrumbs', '1.5 pounds ground beef or lamb', '2 large onions', '2 cloves garlic', '1/2 cup dry red wine', '1 teaspoon ground cinnamon', '1/4 teaspoon ground allspice', '1/4 cup fresh parsley', '2 tablespoons tomato paste', '1 cup crushed tomatoes', '1 teaspoon sugar', 'Kosher salt', 'Freshly ground black pepper'],
+    method: 'Using a sharp vegetable peeler, partially peel the eggplants, leaving strips of peel about 1 inch wide around the eggplant. Slice the eggplant into 1/2-inch slices. Place the eggplant slices in a colander and salt them liberally. Cover with an inverted plate and weigh down the plate with a heavy can or jar. Place the colander in the sink and let the eggplants brine for 1 hour or a minimum of 15 to 20 minutes. Preheat the oven to 400 F. Line two baking sheets with aluminum foil and lightly grease with some of the olive oil. Rinse the eggplant slices with abundant water and dry with paper towels. Reserve. Add a splash of water to the egg whites and beat them lightly with a fork. Place breadcrumbs on a flat plate. Dip the rinsed and dried eggplant slices in the beaten egg whites and then dredge them lightly in the breadcrumbs, coating both sides. Save a handful of breadcrumbs for assembling. Place the breaded eggplant slices on the foil-lined baking sheets. If you can\'t fit all the eggplant on the sheets, then you will need to cook them in batches. Bake for 30 minutes, turning them over once during cooking. When the eggplant is tender and lightly browned in places, set them aside and keep the oven on.',
+    poster: 'https://static.itdg.com.br/images/auto-auto/7ad6cad4643a39a4e8c3c50cc33b0abf/moussaka.jpg'
+  },
+  {
+    title: 'Tzatziki',
+    category: 'Europe',
+    description: 'Tzatziki (pronounced sat-ZEE-key, or cha-CHI-key in Greece) is a popular yogurt-based cucumber sauce. It\'s traditionally made with strained salted sheep\'s or goat\'s milk yogurt combined with cucumbers, garlic, and herbs. Cool and creamy, this tangy cucumber dip is the perfect complement to grilled meats and vegetables. It is often served on the side with warm bread for dipping, used as a condiment for souvlaki, or included on a meze platter.',
+    prepTime: 10,
+    ingredients: ['3 tablespoons olive oil', '1 tablespoon white vinegar', '2 cloves garlic', '1/2 teaspoon salt', '1/4 teaspoon freshly ground black pepper', '1 cup Greek yoghurt', '1 cup sour cream', '2 medium cucumbers', '1 teaspoon chopped fresh dill'],
+    method: 'In a medium bowl, combine the olive oil, vinegar, garlic, salt, and pepper. Mix until well combined. Using a whisk, blend the yogurt with the sour cream in a separate bowl. Add the olive oil mixture to the yogurt mixture and mix well. Add the cucumbers and chopped fresh dill. Chill for at least 2 hours before serving and garnish with an additional sprinkle of fresh dill.',
+    poster: 'https://www.thespruceeats.com/thmb/m0ekbto7Fas_a2dyB9ZuRsQGZ_k=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/tzatziki-cucumber-yogurt-dip-1705394-hero-04-403aaf25ced54ec895eecc75553a8869.jpg'
+  },
+  {
+    title: 'Seafood Paella',
+    category: 'Europe',
+    description: 'Paella is to Spain what barbecues mean for so many of us on this side of the Atlantic. At its core paella means a special occasion or family and friends gathering around the table on Sundays. To say there is a simple way to define paella would be impossible so let\'s have a paella heart-to-heart. Paella-like dishes have been documented as far back as the time of the Romans and are said to have been brought to Spain by Muslim North Africans, as they brought rice with them. But historians have agreed that paella as we know it is rooted in Valencia, Spain. Hence the paella Valenciana is the one and only paella by definition.',
+    prepTime: 50,
+    ingredients: ['Olive oil', 'Chicken', 'Rabbit', 'Flat Beans', 'Garrofe bean', 'Tomato', 'Water', 'Salt', 'Saffron', 'Rice'],
+    method: 'Heat the shrimp broth you made earlier in a medium saucepan and bring to a gentle simmer. Taste and season if needed. It should taste pleasantly seasoned. Cover the pan to prevent excess evaporation. For the sofrito base, using a 12-inch shallow pan such as a skillet or paella over medium heat, heat 2 tablespoons of the oil and sauté the onion with a pinch of salt until translucent, about 5 minutes. Add the red and green bell pepper and cook until soft, 7 to 8 minutes. Add the garlic and cook until it releases its aroma, 1 to 2 minutes. Add the rice and stir well; give the rice 2 to 3 minutes to “toast” a little. You can tell it is toasted when it is white in the center with translucent edges. This is an important step in making paella and developing the flavor.',
+    poster: 'https://www.thespruceeats.com/thmb/aYe2KE6UglOoKlukCQIPp4bZXQ8=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/SES-seafood-paella-recipe-7106702-hero-01-de73366ad4a64c61924627ee870eabad.jpg'
+  },
+  {
+    title: 'Spanish Gazpacho Soup',
+    category: 'Europe',
+    description: 'In hot weather there\'s nothing better than a bowl of cold fresh soup. This Spanish Gazpacho recipe uses simple ingredients and requires zero cooking time. Just blend it, chill and serve.',
+    prepTime: 15,
+    ingredients: ['6 very ripe tomatoes', '2 slices slightly stale bread', '1 medium cucumber', '1 red bell pepper', '2 cloves garlic', '⅓ cup olive oil', '1 tablespoon red wine vinegar', '½ teaspoon salt', '¼ teaspoon pepper'],
+    method: 'Make a small X incision on the bottom of each tomato and drop them in a bowl with boiling water. Leave them there for 3 minutes. Then carefully remove tomatoes from the water and peel off the skin. At the same time place a slightly stale bread in a bowl with about ½ cup of cold water and let it sit for 10-20 minutes until bread softens. Squeeze as much water as possible out of the bread and tear it into 1 inch pieces. Roughly chop the tomatoes, cucumber, remove the seeds from red bell pepper and chop it as well. Place tomatoes, bell pepper, cucumber, bread, garlic, olive oil, vinegar, salt and pepper in a blender and process until smooth and creamy but still with some texture. Adjust the seasoning if needed. Chill Gazpacho in a refrigerator for 30 minutes or serve at room temperature topped with chopped tomatoes, cucumber, chives and a drizzle of olive oil.',
+    poster: 'https://spanishsabores.com/wp-content/uploads/2023/08/Gazpacho-Featured.jpg'
+  },
+  {
+    title: 'Hungarian Goulash',
+    category: 'Europe',
+    description: 'Hungarian Goulash is a delicious beef stew (or soup) with a rich paprika seasoned broth. This delicious dish is warm and comforting, perfect for a cold weather day. Serve this over homemade noodles (or add potatoes) or with a side of bread or Biscuits to sop up any of the broth left in your bowl.',
+    prepTime: 120,
+    ingredients: ['2 medium onions', '2 teaspoons butter', '1 teaspoon caraway seeds', '2 tablespoons paprika', '¼ cup flour', '1 ½ pound stewing beef', '2 cups beef broth or water', '1 cup diced tomatoes canned', '1 teaspoon salt', '¼ teaspoon pepper'],
+    method: 'In a large pot, melt butter and add onion. Cook till translucent. Stir in caraway seeds and paprika and mix well. In a bowl, dredge the stew beef with flour. Add beef to the onion mixture and cook for about 2-3 minutes. Slowly add about ¼ cup of the beef broth to lift the brown bits off the bottom of the pan. Then add remaining broth, diced tomatoes (potatoes and carrots if using), salt and pepper. Stir and bring to a boil, cover, then reduce to a simmer for about 1 ½ -2 hours or until tender.',
+    poster: 'https://www.kimbersfarmshop.co.uk/blog-admin/wp-content/uploads/2021/01/Goulash.jpg'
+  },
+  {
+    title: 'Egg Roll Noodle Bowl',
+    category: 'Asia',
+    description: 'Noodley dish.',
+    prepTime: 30,
+    ingredients: ['1 tablespoon sesame oil', '1/2 pound ground pork', '1 tablespoon soy sauce', '1 garlic clove, minced', '1 teaspoon ground ginger', '1/2 teaspoon salt', '1/4 teaspoon ground turmeric', '1/4 teaspoon pepper', '6 cups shredded cabbage', '2 large carrots, shredded', '4 ounces rice noodles', '3 green onions, thinly sliced', 'Additional soy sauce'],
+    method: 'In a large cast-iron or other heavy skillet, heat oil over medium-high heat; cook and crumble pork until browned, 4-6 minutes. Stir in soy sauce, garlic and seasonings. Add cabbage and carrots; cook until vegetables are tender, stirring occasionally, 4-6 minutes longer. Cook rice noodles according to package directions; drain and immediately add to pork mixture, tossing to combine. Sprinkle with green onions. If desired, serve with additional soy sauce.',
+    poster: 'https://www.tasteofhome.com/wp-content/uploads/2017/09/exps191775_SD163614B12_03_8b.jpg'
+  },
+  {
+    title: 'Strawberry Cake',
+    category: 'Europe',
+    description: 'Sponge cake.',
+    prepTime: 15,
+    ingredients: ['1 package white cake mix', '3 ounces strawberry gelatin', '3 tablespoons sugar', '3 tablespoons all-purpose flour', '1 cup water', '1/2 cup canola oil', '2 large eggs', '1 cup finely chopped strawberries'],
+    method: 'Preheat oven to 350°. Line the bottoms of 2 greased 8-in. round baking pans with parchment; grease parchment. In a large bowl, combine cake mix, gelatin, sugar and flour. Add water, oil and eggs; beat on low speed 30 seconds. Beat on medium 2 minutes. Fold in chopped strawberries. Transfer to prepared pans. Bake until a toothpick inserted in center comes out clean, 25-30 minutes. Cool in pans 10 minutes before removing to wire racks; remove paper. Cool completely. For frosting, in a small bowl, beat butter until creamy. Beat in crushed strawberries. Gradually beat in enough confectioners sugar to reach desired consistency. Spread frosting between layers and over top and sides of cake.',
+    poster: 'https://sugargeekshow.com/wp-content/uploads/2019/07/fresh-strawberry-cake-5.jpg'
+  },
+  {
+    title: 'Quick Cream of Mushroom Soup',
+    category: 'Europe',
+    description: 'We love Asian egg rolls, but they can be challenging to make. Simplify everything with this deconstructed egg roll made on the stovetop and served in a bowl.',
+    prepTime: 30,
+    ingredients: ['2 tablespoons butter', '1/2 pound sliced fresh mushrooms', '1/4 cup chopped onion', '6 tablespoons all-purpose flour', '1/2 teaspoon salt', '1/8 teaspoon pepper', '2 cans chicken broth', '1 cup half-and-half cream'],
+    method: 'In a large saucepan, heat butter over medium-high heat; saute mushrooms and onion until tender. Mix flour, salt, pepper and 1 can broth until smooth; stir into mushroom mixture. Stir in the remaining can of broth. Bring to a boil; cook and stir until thickened, about 2 minutes. Reduce heat; stir in cream. Simmer, uncovered, until flavors are blended, about 15 minutes, stirring occasionally.',
+    poster: 'https://www.tasteofhome.com/wp-content/uploads/2018/01/Quick-Cream-of-Mushroom-Soup_EXPS_SDAM17_11767_B12_02_8b-7.jpg'
+  },
+  {
+    title: 'Slow Cooker Chicken Tacos',
+    category: 'South America',
+    description: 'Our fun, simple slow-cooker chicken tacos are perfect for a relaxing dinner with friends. If we have any leftover filling, I toss it into a garden-fresh taco salad.',
+    prepTime: 10,
+    ingredients: ['1-1/2 pounds boneless skinless chicken breast halves', '3 tablespoons lime juice', '1 tablespoon chilli powder', '1 cup frozen corn, thawed', '1 cup chunky salsa', '12 fat-free flour tortillas'],
+    method: 'Place chicken in a 3-qt. slow cooker. Combine lime juice and chili powder; pour over chicken. Cook, covered, on low until chicken is tender, 5-6 hours. Remove chicken. When cool enough to handle, shred meat with 2 forks; return to slow cooker. Stir in corn and salsa. Cook, covered, on low until heated through, about 30 minutes. Place filling on tortillas; if desired, serve with sour cream, pickled onions, lettuce and cheese.',
+    poster: 'https://www.tasteofhome.com/wp-content/uploads/2018/01/Lime-Chicken-Tacos_EXPS_SSCRDS17_34347_B03_22_1b-2.jpg'
+  },
+  {
+    title: 'Bacon Macaroni Salad',
+    category: 'North America',
+    description: 'This pleasing pasta salad is like eating a BLT in a bowl. Filled with crispy bacon, chopped tomato, celery and green onion, the sensational salad is coated with a tangy mayonnaise and vinegar dressing. It\'s a real crowd-pleaser!',
+    prepTime: 20,
+    ingredients: ['2 cups uncooked elbow macaroni', '1 large tomato, finely chopped', '2 celery ribs, finely chopped', '5 green onions, finely chopped', '1-1/4 cups mayonnaise', '5 teaspoon white vinegar', '1/4 teaspoon salt', '1/8 to 1/4 teaspoon pepper', '1 pound bacon strips, cooked and crumbled'],
+    method: 'Cook macaroni according to package directions; drain and rinse in cold water. Transfer to a large bowl; stir in tomato, celery and green onions. In a small bowl, whisk mayonnaise, vinegar, salt and pepper. Pour over macaroni mixture and toss to coat. Refrigerate, covered, at least 2 hours. Just before serving, stir in bacon.',
+    poster: 'https://www.tasteofhome.com/wp-content/uploads/2018/01/exps18341_CW153049C03_31_4b-2.jpg'
+  },
+  {
+    title: 'Twice-Baked Potato Casserole',
+    category: 'Oceania',
+    description: 'The hearty casserole is loaded with a palate-pleasing combination of bacon, cheeses, green onions and sour cream.',
+    prepTime: 15,
+    ingredients: ['1-1/2 pounds red potatoes, baked', '1/4 teaspoon salt', '1/4 teaspoon pepper', '1 pound sliced bacon, cooked and crumbled', '3 cups sour cream', '2 cups shredded', 'mozzarella cheese', '2 cups shredded cheddar cheese', '2 green onions, sliced'],
+    method: 'Preheat oven to 350°. Cut baked potatoes into 1-in. cubes. Place half in a greased 13x9-in. baking dish. Sprinkle with half of the salt, pepper and bacon. Top with half of the sour cream and cheeses. Repeat layers. Bake, uncovered, 20-25 minutes or until cheeses are melted. Sprinkle with onions.',
+    poster: 'https://www.tasteofhome.com/wp-content/uploads/2018/01/Twice-Baked-Potato-Casserole_EXPS_H13X9BZ17_11330_C06_28_6b-2.jpg'
+  },
+  {
+    title: 'Chicken Penne Casserole',
+    category: 'Europe',
+    description: 'Lovely pasta dish for winter!',
+    prepTime: 35,
+    ingredients: ['1-1/2 cups uncooked penne pasta', '1 tablespoon canola oil', '1 pound boneless skinless chicken thighs, cut into 1-inch pieces', '1/2 cup chopped onion', '1/2 cup chopped green pepper', '1/2 cup chopped sweet red pepper', '1 teaspoon dried basil', '1 teaspoon dried oregano', '1 teaspoon dried parsley flakes', '1/2 teaspoon salt', '1/2 teaspoon crushed red pepper flakes', '3 garlic cloves, minced', '1 can diced tomatoes, undrained', '3 tablespoons tomato paste', '3/4 cup chicken broth', '2 cups shredded part-skim mozzarella cheese', '1/2 cup grated Romano cheese', 'Minced fresh parsley'],
+    method: 'Preheat oven to 350°. Cook the pasta according to package directions. Meanwhile, in a large saucepan, heat oil over medium heat. Add the chicken, onion, peppers and seasonings; saute until chicken is no longer pink. Add garlic; cook 1 minute longer. In a blender, pulse the diced tomatoes and tomato paste, covered, until blended. Add to chicken mixture. Stir in broth; bring to a boil over medium-high heat. Reduce the heat; cover and simmer until slightly thickened, 10-15 minutes. Drain pasta; toss with chicken mixture. Spoon half of the mixture into a greased 2-qt. baking dish. Sprinkle with half of the cheeses. Repeat layers.Cover and bake 30 minutes. Uncover; bake until heated through, 15-20 minutes longer. If desired, garnish with parsley.',
+    poster: 'https://www.tasteofhome.com/wp-content/uploads/2018/01/Chicken-Penne-Casserole_EXPS_CHKBZ18_39334_C10_24_1b-4.jpg'
+  },
+  {
+    title: 'Comforting Chicken Noodle Soup',
+    category: 'Asia',
+    description: 'A rich, comforting, creamy chicken noodle soup.',
+    prepTime: 25,
+    ingredients: ['2 quarts water', '8 teaspoons chicken bouillon granules', '6-1/2 cups uncooked wide egg noodles', '2 cans (10-3/4 ounces each) condensed cream of chicken soup', '3 cups cubed cooked chicken', '1 cup sour cream', 'Minced fresh parsley'],
+    method: 'In a large saucepan, bring water and bouillon to a boil. Add noodles; cook, uncovered, until tender, about 10 minutes. Do not drain. Add soup and chicken; heat through. Remove from the heat; stir in the sour cream. Sprinkle with minced parsley.',
+    poster: 'https://www.tasteofhome.com/wp-content/uploads/2017/09/Comforting-Chicken-Noodle-Soup_EXPS_MRMZ16_9735_B09_09_2b.jpg'
+  },
+  {
+    title: 'Ravioli Lasagne',
+    category: 'Europe',
+    description: 'Perfect dish for sharing.',
+    prepTime: 25,
+    ingredients: ['1 pound ground beef', '1 jar spaghetti sauce', '1 package frozen sausage or cheese ravioli', '1.5 cups shredded part-skim mozzarella cheese', 'Fresh basil'],
+    method: 'In a large skillet, cook and crumble the beef over medium heat until no longer pink, 5-7 minutes; drain. In a greased 2-1/2-qt. baking dish, layer a third of the spaghetti sauce, half of the ravioli, half the beef and 1/2 cup cheese; repeat layers. Top with remaining sauce and cheese. Cover and bake at 400° for 40-45 minutes or until heated through. If desired, sprinkle with chopped fresh basil.',
+    poster: 'https://images.immediate.co.uk/production/volatile/sites/30/2020/08/ravioli-lasagne-ff62ed4.jpg'
+  },
+  {
+    title: 'Skillet Shepherd\'s Pie',
+    category: 'Europe',
+    description: 'Great for fish lovers.',
+    prepTime: 30,
+    ingredients: ['1 pound ground beef', '1 cup chopped onion', '2 cups frozen corn', '2 cups frozen peas', '2 tablespoons ketchup', '1 tablespoon Worcestershire sauce', '2 teaspoons minced garlic', '1 tablespoon cornstarch', '1 teaspoon beef bouillon granules', '1/2 cup cold water', '1/2 cup sour cream', '3-1/2 cups mashed potatoes', '3/4 cup shredded cheddar cheese'],
+    method: 'In a large skillet, cook beef and onion over medium heat until meat is no longer pink, breaking it into crumbles; drain. Stir in the corn, peas, ketchup, Worcestershire sauce and garlic. Reduce heat to medium-low; cover and cook for 5 minutes. Combine the cornstarch, bouillon and water until well blended; stir into beef mixture. Bring to a boil over medium heat; cook and stir until thickened, 2 minutes. Stir in sour cream and heat through (do not boil). Spread mashed potatoes over the top; sprinkle with cheese. Cover and cook until potatoes are heated through and cheese is melted.',
+    poster: 'https://www.tasteofhome.com/wp-content/uploads/2018/01/exps27626_FM143298D03_06_6b_WEB-6.jpg'
+  },
+  {
+    title: 'Peanut Butter Cups',
+    category: 'North America',
+    description: 'The sweetest buttercups!',
+    prepTime: 20,
+    ingredients: ['1 cup creamy peanut butter', '1/2 cup sugar', '4.5 teaspoons butter', '1/2 teaspoon salt', '2 cups semisweet chocolate chips', '4 milk chocolate bars', 'Colored sprinkles'],
+    method: 'Combine 1/2 cup peanut butter, confectioners sugar, butter and salt until smooth. In a microwave, melt chocolate chips, candy bars and remaining peanut butter; stir until smooth. Drop teaspoons of chocolate mixture into paper-lined mini muffin cups. Drop a scant teaspoon of peanut butter mixture into each cup; top with another teaspoon of chocolate mixture. If desired, decorate with sprinkles. Refrigerate until set. Store in an airtight container.',
+    poster: 'https://www.tasteofhome.com/wp-content/uploads/2018/01/Homemade-Peanut-Butter-Cups_EXPS_HMGRDS18_39581_B06_21_4b-5.jpg'
+  },
+  {
+    title: 'Chocolate Chip Oatmeal Cookies',
+    category: 'North America',
+    description: 'A tasty treat!',
+    prepTime: 20,
+    ingredients: ['1 cup butter', '3/4 cup sugar', '3/4 cup packed brown sugar', '2 large eggs', '1 teaspoon vanilla extract', '3 cups quick-cooking oats', '1-1/2 cups all-purpose flour', '1 package instant vanilla pudding mix', '1 teaspoon baking soda', '1 teaspoon salt', '2 cups semisweet chocolate chips', '1 cup chopped nuts'],
+    method: 'In a large bowl, cream butter and sugars until light and fluffy. Beat in eggs and vanilla. Combine the oats, flour, dry pudding mix, baking soda and salt; gradually add to creamed mixture and mix well. Stir in chocolate chips and nuts. Drop by level tablespoonfuls 2 in. apart onto ungreased baking sheets. Bake at 375° for 10-12 minutes or until lightly browned. Remove to wire racks.',
+    poster: 'https://www.tasteofhome.com/wp-content/uploads/2017/09/Chocolate-Chip-Oatmeal-Cookies_EXPS_MRR16_33121_A09_01_01b.jpg'
+  },
+  {
+    title: 'Baked Tilapia',
+    category: 'Oceania',
+    description: 'Lovely summer recipe.',
+    prepTime: 20,
+    ingredients: ['4 tilapia fillets', '3 tablespoons butter', '3 tablespoons lemon juice', '1.5 teaspoons garlic powder', '1/8 teaspoon salt', '2 tablespoons capers', '1/2 teaspoon dried oregano', '1/8 teaspoon paprika'],
+    method: 'Place tilapia in an ungreased 13x9-in. baking dish. In a small bowl, combine the butter, lemon juice, garlic powder and salt; pour over the fillets. Sprinkle with capers, oregano and paprika. Bake, uncovered, at 425° until fish just begins to flake easily with a fork, 10-15 minutes.',
+    poster: 'https://www.tasteofhome.com/wp-content/uploads/2018/01/exps38183_MRR153791B09_17_2b-5.jpg'
   }
 ]
 

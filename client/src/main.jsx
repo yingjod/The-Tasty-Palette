@@ -18,6 +18,7 @@ import Login from './components/Login'
 
 // Loaders
 import { getAllRecipes, getSingleRecipe } from './utilities/loaders/recipes'
+import { registerUser } from './utilities/actions/auth'
 
 
 const router = createBrowserRouter([
@@ -43,12 +44,13 @@ const router = createBrowserRouter([
       {
         path: '/register',
         element: <Register />,
-        
+        action: async ({ request }) => registerUser(request)
+
       },
       {
         path: '/login',
         element: <Login />,
-        
+
       }
     ]
   }
