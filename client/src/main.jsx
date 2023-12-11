@@ -19,7 +19,6 @@ import Login from './components/Login'
 // Loaders
 import { getAllRecipes, getSingleRecipe } from './utilities/loaders/recipes'
 import { registerUser, loginUser } from './utilities/actions/auth'
-// import { async } from 'seed/lib/seed'
 
 
 const router = createBrowserRouter([

@@ -1,4 +1,6 @@
 import { useRouteError } from "react-router-dom"
+import Nav from "./Nav"
+import Footer from "./Footer"
 
 export default function ErrorPage() {
   const error = useRouteError()
@@ -7,10 +9,11 @@ export default function ErrorPage() {
 
   return (
     <>
+      <Nav />
       <div id="error-page">
-        {/* <h1><i>{error.statusText || error.message}</i></h1> */}
         <p>Sorry, an unexpected error has occurred!</p>
       </div>
+      <Footer />
     </>
   )
 }

@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { useState } from 'react'
 
 // Images
@@ -7,15 +7,22 @@ import logoIcon from '../images/logo-icon.png'
 // Bootstrap components
 import Modal from 'react-bootstrap/Modal'
 
+// Helpers
+import { activeUser, removeToken } from '../utilities/helpers/common'
+
 export default function Nav() {
+
+  const navigate = useNavigate()
 
 // ! State
   const [show, setShow] = useState(false)
 
-  // function handleLogOut(){
-  //   removeToken()
-  //   Navigate('/login')
-  // }
+  function handleLogOut(){
+    // Remove token from storage
+    removeToken()
+    // Navigate to the log in page
+    navigate('/')
+  }
 
   return (
     <>
@@ -31,10 +38,19 @@ export default function Nav() {
       <Modal show={show} fullscreen={true} onHide={() => setShow(false)}>
         <Modal.Header closeButton>
           <nav onClick={() => setShow(false)} className='link-container'>
-            <Link to="/">Home</Link><br />
-            <Link to="/recipes">All Recipes</Link><br />
-            <Link to="/login">Login</Link><br />
-            <Link to="/register">Register</Link><br />
+            <Link to="/">Home</Link>
+            <Link to="/recipes">All Recipes</Link>
+            { activeUser() ?
+              <>                
+                <Link to="/recipes">Test</Link>
+                <span className='logout' onClick={handleLogOut}>Log out</span>
+              </>
+              :
+              <>
+                <Link to="/login">Login</Link><br />
+                <Link to="/register">Register</Link><br />
+              </>
+            }
           </nav>
         </Modal.Header>
       </Modal>

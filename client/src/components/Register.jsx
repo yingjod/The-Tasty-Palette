@@ -1,9 +1,8 @@
 import { useEffect } from "react";
-import { Form, useActionData, useNavigate } from "react-router-dom";
+import { Form, useActionData, useNavigate, Link } from "react-router-dom";
 import textregister from '../images/text-register.png'
 
 export default function Register() {
-
 
   const res = useActionData()
   console.log(res)
@@ -26,6 +25,7 @@ export default function Register() {
         <input className="registerpass" type="password" name="password" placeholder='Password' /><br />
         <input className="registerpasscon" type="password" name="passwordConfirmation" placeholder='Confirm password' /><br /><br />
         <button className="registerbtn" type="submit">Register</button><br /><br />
+        <p>Already have an account?{'\u00a0'} <Link to="/login"><span className='register-link'> Login</span></Link></p>
         {res && <p className="danger">{res.data.message}</p>}
       </Form>
     </>

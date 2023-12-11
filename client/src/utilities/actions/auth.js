@@ -10,14 +10,14 @@ export async function registerUser(request) {
 
 }
 
+
+
 export async function loginUser(request){
   const data = await formToObj(request)
   return await axios.post('/api/login', data, {
     validateStatus: () => true
   })
 }
-
-
 
 async function formToObj(request) {
   const formData = await request.formData()
