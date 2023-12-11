@@ -22,12 +22,12 @@ export default function SingleRecipe() {
           <ul style={{ listStyle: 'none', padding: 0 }}>
             {reviews.map((review, index) => (
               <li key={index}>
-                {review.rating !== undefined && (
+                {review.rating !== undefined && typeof review.rating === 'number' && (
                   <div>
                     <p style={{ margin: 0, padding: 0 }}>
                       {/* Display stars based on the rating */}
                       {Array(review.rating).fill().map((_, starIndex) => (
-                        <span key={starIndex}>★</span>
+                        <span key={starIndex}>⭐️</span>
                       ))}
                       {/* Display the username who gave the rating */}
                       {review.owner && review.owner.username ? ` Rated by ${review.owner.username}` : 'Unknown User'}
