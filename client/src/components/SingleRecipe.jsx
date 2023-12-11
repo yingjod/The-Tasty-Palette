@@ -17,7 +17,12 @@ export default function SingleRecipe() {
         <img className="single-img" src={poster} alt={`Image of ${title}`} />
         <div className="ing-div">
           <h3 className="single-recipe-title"> Ingredients </h3>
-          <p className="ingredients">{ingredients}</p>
+          <ul className="ingredient-list">
+            {ingredients.map((ingredient, index) => (
+              <li key={index}>
+                {ingredient}</li>
+            ))}
+          </ul>
         </div>
       </div>
 
@@ -31,7 +36,7 @@ export default function SingleRecipe() {
       </div>
 
       <div className="review-section">
-        <h3 className="single-recipe-title"> Reviews</h3>
+        <h3 className="review-title"> Reviews</h3>
           {reviews && reviews.length > 0 ? (
             <ul style={{ listStyle: 'none', padding: 0 }}>
               {reviews.map((review, index) => (
@@ -53,10 +58,10 @@ export default function SingleRecipe() {
               ))}
             </ul>
           ) : (
-            <p>No reviews yet.</p>
+            <p className="review-text">No reviews yet.</p>
           )}
         </div>
-     </>
+    </>
     );
   }
 

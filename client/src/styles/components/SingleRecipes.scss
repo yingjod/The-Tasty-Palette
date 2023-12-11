@@ -35,20 +35,34 @@ h3 {
   display: flex;
 }
 
-p,
+.ingredient-list {
+  color: #7C9070;
+  padding-left: 65px;
+}
+  
+.method, 
 .description,
-.method {
+.prep,
+.ingredients {
   display: flex;
   justify-content: left;
   padding-left: 50px;
   color:#7C9070;
   margin-bottom: 8px;
-}
+  padding-left: 50px;
+  }
 
 .review-section {
+  padding-top: 25px;
+  padding-bottom: 25px;
   background-color: #FEE8B0;
-  li {
-    padding-left: 50px;
+  .review-title {
+    text-align: center;
+    font-size: 1.5em;
+    padding-left: 0;
+  }
+  .review-text, li {
+    color: #7C9070;
     p {
       padding-left: 0;
     }
