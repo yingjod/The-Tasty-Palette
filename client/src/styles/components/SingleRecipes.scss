@@ -1,0 +1,56 @@
+h2 {
+  font-size: 2.5em;
+  color: #FF7C5E;
+  padding-left: 50px;
+  padding-top: 50px;
+}
+
+h3 {
+  padding-left: 50px;
+  font-size: 1em;
+  color: #FF7C5E;
+  font-weight: bold;
+}
+
+.single-img {
+  padding-left: 50px;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  height: 500px;
+}
+
+.single-recipe-title {
+  margin-bottom: 2px;
+}
+
+.ingredients, ul {
+  padding-left: 50px;
+}
+
+.ing-div {
+  padding-top: 25px;
+}
+
+.img-ing {
+  display: flex;
+}
+
+p,
+.description,
+.method {
+  display: flex;
+  justify-content: left;
+  padding-left: 50px;
+  color:#7C9070;
+  margin-bottom: 8px;
+}
+
+.review-section {
+  background-color: #FEE8B0;
+  li {
+    padding-left: 50px;
+    p {
+      padding-left: 0;
+    }
+  }
+}
