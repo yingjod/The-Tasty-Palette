@@ -15,12 +15,11 @@
 
 .info {
 
-  h5 {color: white;
+  h5, h6 {color: white;
   font-weight: bold;
   font-size: 25px;}
 
-  h6{color: rgb(200, 185, 185);
-    font-weight: bold;
+  h6 {
     font-size: 20px;
   }
 }
@@ -35,5 +34,4 @@
   align-items: center;
   justify-content: center;
   margin-top: 50px;
-
 }
