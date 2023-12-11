@@ -20,8 +20,7 @@ export default function Recipes() {
   //! Functions
   function handleChange(e){
     if (e.target.name === 'rating') {
-      const ratingValue = e.target.value === 'All' ? 'All' : parseFloat(e.target.value, 10)
-      setSelectedRating(ratingValue)
+      setSelectedRating(e.target.value)
     } else {
       const newObj = {
         ...filters,
@@ -36,11 +35,9 @@ export default function Recipes() {
 
     const pattern = new RegExp(filters.search, 'i')
     const filteredArray = recipe.filter(rec => {
-      console.log('avgRating ->', parseFloat(rec.avgRating))
-      console.log('selectedRating ->', parseFloat(selectedRating))
-      console.log('Reviews->',rec.reviews)
       return pattern.test(rec.title) && (rec.category === filters.category || filters.category === 'All') &&
-      (selectedRating === 'All' || parseFloat(rec.avgRating) ===  parseFloat(selectedRating))
+      (selectedRating === 'All' || parseInt(rec.avgRating) === parseFloat(selectedRating))
+      
     })
     setFilteredCategories(filteredArray)
 

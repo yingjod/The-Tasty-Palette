@@ -97,7 +97,7 @@ export default function SingleRecipe() {
               <li key={index}>
                 <p style={{ margin: 0, padding: 0 }}>
                   {Array(review.rating).fill().map((_, starIndex) => (
-                    <span key={starIndex}>★</span>
+                    <span key={starIndex}>⭐️</span>
                   ))}
                   {review.owner && review.owner.username ? ` Rated by ${review.owner.username}` : 'Unknown User'}
                 </p>
@@ -133,7 +133,7 @@ export default function SingleRecipe() {
         </form>
       </div>
     </>
-  );
+  )
 }
 
 
