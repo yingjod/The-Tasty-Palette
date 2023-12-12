@@ -55,7 +55,7 @@ export default function Home() {
             </Link>
             <Carousel.Caption className='info'>
               <h5>{recipe.title}</h5>
-              <h6>Total Time:{recipe.prepTime} mins</h6>
+              <h6>Total Time: {recipe.prepTime} mins</h6>
             </Carousel.Caption>
           </Carousel.Item>
         ))}

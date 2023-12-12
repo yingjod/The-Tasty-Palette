@@ -66,27 +66,52 @@ export default function SingleRecipe() {
     <>
       <div>
         <h2>{recipe.title}</h2>
-        <img src={recipe.poster} alt={`Image of ${recipe.title}`} />
-        <p>{recipe.description}</p>
-        <p>{recipe.prepTime} mins</p>
-        <p>{recipe.ingredients}</p>
-        <p>{recipe.method}</p>
+      </div>
 
-        <h3>Reviews</h3>
-        {recipe.reviews && recipe.reviews.length > 0 ? (
-          <ul style={{ listStyle: 'none', padding: 0 }}>
-            {recipe.reviews.map((review, index) => (
+      <div className='img-ing'>
+        <img className="single-img" src={recipe.poster} alt={`Image of ${recipe.title}`} />
+        <div className="ing-div">
+          <h3 className='single-recipe-title'>Ingredients</h3>
+          <ul className='ingredient-list'>
+            {recipe.ingredients.map((ingredient, index) => (
               <li key={index}>
-                <p style={{ margin: 0, padding: 0 }}>
-                  {Array(review.rating).fill().map((_, starIndex) => (
-                    <span key={starIndex}>★</span>
-                  ))}
-                  {review.owner && review.owner.username ? ` Rated by ${review.owner.username}` : 'Unknown User'}
-                </p>
-                {review.text && <p>{`Comment: ${review.text}`}</p>}
-                <button onClick={() => handleDeleteReview(review._id)}>
-                  Delete Review
-                </button>
+                {ingredient}</li>
+            ))}
+          </ul>
+        </div>
+      </div>
+
+      <div>
+        <h3 className='single-recipe-title'>Continent</h3>
+        <p className='continent'>{recipe.category}</p>
+        <h3 className='single-recipe-title'>Preparation Time</h3>
+        <p className='prep'>{recipe.prepTime} mins</p>
+        <h3 className='single-recipe-title'>Description</h3>
+        <p className='description'>{recipe.description}</p>
+        {/* <p>{recipe.ingredients}</p> */}
+        <h3 className='single-recipe-title'>Method</h3>
+        <p className='method'>{recipe.method}</p>
+
+        <div className='review-section'>
+          <h3 className='review-title'>Reviews</h3>
+            {recipe.reviews && recipe.reviews.length > 0 ? (
+              <ul style={{ listStyle: 'none', padding: 0 }}>
+                {recipe.reviews.map((review, index) => (
+                  <li key={index}>
+                    <div>
+                      <p className='star-rating'>
+                        {Array(review.rating).fill().map((_, starIndex) => (
+                          <span key={starIndex}>★</span>
+                        ))}
+                        {review.owner && review.owner.username ? `${'\u00a0'} Rated by ${review.owner.username}` : 'Unknown User'}
+                      </p>
+                      {review.text && <p className='comment'>{`Comment: ${review.text}`}</p>}
+                    </div>
+                    <div className='delete-btn-container'>
+                      <button className="delete-btn" onClick={() => handleDeleteReview(review._id)}>
+                      Delete Review
+                      </button>
+                    </div>
               </li>
             ))}
           </ul>
