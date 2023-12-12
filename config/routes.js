@@ -28,7 +28,7 @@ router.route('/recipes/:recipeId')
 router.route('/recipes/:recipeId/reviews')
   .post(secureRoute, createReview)
 
-router.route('/recipes/:recipeId/reviews/:reviewID')
+router.route('/recipes/:recipeId/reviews/:reviewId')
   .delete(secureRoute, deleteReview)
 
 
