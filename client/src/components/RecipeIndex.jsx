@@ -72,7 +72,9 @@ export default function Recipes() {
               <option value={5}>⭐️⭐️⭐️⭐️⭐️</option>
             </select>
           </div>
+          <div className="custom-select">
           <input id="search" name="search" placeholder='Search...' value={filters.search} onChange={handleChange} />
+          </div>
         </div>
         <div className="recipe-cards">
         {filteredCategories.sort((a, b) => a.title < b.title ? -1 : 1).map(rec => {
