@@ -39,11 +39,13 @@ h2 {
   color: #7C9070;
   padding-left: 65px;
 }
-  
+
+// Main body of page
 .method, 
 .description,
 .prep,
-.ingredients {
+.ingredients, 
+.continent {
   display: flex;
   justify-content: left;
   padding-left: 50px;

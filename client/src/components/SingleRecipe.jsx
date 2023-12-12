@@ -82,6 +82,8 @@ export default function SingleRecipe() {
       </div>
 
       <div>
+        <h3 className='single-recipe-title'>Continent</h3>
+        <p className='continent'>{recipe.category}</p>
         <h3 className='single-recipe-title'>Preparation Time</h3>
         <p className='prep'>{recipe.prepTime} mins</p>
         <h3 className='single-recipe-title'>Description</h3>
