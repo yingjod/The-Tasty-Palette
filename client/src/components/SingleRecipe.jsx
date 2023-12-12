@@ -82,6 +82,8 @@ export default function SingleRecipe() {
       </div>
 
       <div>
+        <h3 className='single-recipe-title'>Continent</h3>
+        <p className='continent'>{recipe.category}</p>
         <h3 className='single-recipe-title'>Preparation Time</h3>
         <p className='prep'>{recipe.prepTime} mins</p>
         <h3 className='single-recipe-title'>Description</h3>
@@ -97,17 +99,19 @@ export default function SingleRecipe() {
                 {recipe.reviews.map((review, index) => (
                   <li key={index}>
                     <div>
-                      <p style={{ margin: 0, padding: 0 }}>
+                      <p className='star-rating'>
                         {Array(review.rating).fill().map((_, starIndex) => (
                           <span key={starIndex}>★</span>
                         ))}
                         {review.owner && review.owner.username ? `${'\u00a0'} Rated by ${review.owner.username}` : 'Unknown User'}
                       </p>
-                      {review.text && <p>{`Comment: ${review.text}`}</p>}
+                      {review.text && <p className='comment'>{`Comment: ${review.text}`}</p>}
                     </div>
-                    <button onClick={() => handleDeleteReview(review._id)}>
-                  Delete Review
-                </button>
+                    <div className='delete-btn-container'>
+                      <button className="delete-btn" onClick={() => handleDeleteReview(review._id)}>
+                      Delete Review
+                      </button>
+                    </div>
               </li>
                 ))}
               </ul>

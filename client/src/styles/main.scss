@@ -1,11 +1,15 @@
 @import './global/variables.scss';
 @import './global/base.scss';
+@import './global/forms.scss';
 @import './components/Nav.scss';
 @import './components/Home.scss';
 
 @import './components/RecipeIndex.scss';
 @import './components/Register.scss';
-@import './global/forms.scss';
+@import './components/Login.scss';
+
 @import './components/ErrorPage.scss';
 @import './components/RecipeCreate.scss';
 @import './components/SingleRecipes.scss';
+@import './components/Stars.scss';
+@import './components/Footer.scss'

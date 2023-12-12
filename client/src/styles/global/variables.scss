@@ -35,3 +35,11 @@ $yellow: #FEE8B0;
   background-position: center;
   background-repeat: no-repeat;
 }
+
+@mixin button {
+  background-color: #FF7C5E;
+  border-radius: 5px;
+  font-size: 1em;
+  color: white;
+  border: none;
+}

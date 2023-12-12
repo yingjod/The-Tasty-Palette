@@ -24,8 +24,8 @@ export default function Register() {
         <input className="registeremail" type="email" name="email" placeholder='Email address' /><br />
         <input className="registerpass" type="password" name="password" placeholder='Password' /><br />
         <input className="registerpasscon" type="password" name="passwordConfirmation" placeholder='Confirm password' /><br /><br />
-        <button className="registerbtn" type="submit">Register</button><br /><br />
-        <p className="register">Already have an account?{'\u00a0'} <Link to="/login"><span className='register-link'> Login</span></Link></p>
+        <button className="reg-login-btn" type="submit">Register</button><br /><br />
+        <p className="register">Already have an account?{'\u00a0'} <Link to="/login"><span className='reg-login-link'> Login</span></Link></p>
         {res && <p className="danger">{res.data.message}</p>}
       </Form>
     </>

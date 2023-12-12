@@ -1,16 +1,10 @@
-.form {
-  @include flex-center(column);
-  width: 400px;
-  max-width: 100%;
-  margin: 2rem auto;
-
-  input, textarea {
-    @extend .form-input;
-  }
-  
-  button {
-    margin-top: 1rem;
-  }
+.form-input {
+  height: 50px;
+  width: 300px;
+  font-size: 20px;
+  background-color: #FEE8B0;
+  border-radius: 5px;
+  border: none
 }
 
 .danger{
@@ -18,35 +12,24 @@
   width: 50%;
 }
 
-.registerbtn{
-  background-color: #FF7C5E;
-  border-radius: 5px;
+// Register and login button formatting and behaviours
+.reg-login-btn {
+  @include button;
+  font-size: 20px;
   height: 50px;
   width: 150px;
-  font-size: 20px;
-  color: white;
-  border:none;
 }
 
-.registerbtn:hover {
+.reg-login-btn:hover {
   background-color: #9CA777; /* Change color on hover */
+  color: #FEE8B0;
 }
 
-.registerbtn:active {
+.reg-login-btn:active {
   transform: translate(1px, 1px); /* Move button 2px down on click */
 }
 
-p {
-  display: flex;
-  justify-content: center;
-}
-
-.register-link {
-  color: #FF7C5E;
-  font-weight: bold;
-}
-
-.register-link:hover {
+.reg-login-link:hover {
   background-color: #9CA777; /* Change color on hover */
   color: #FEE8B0;
 }
@@ -54,16 +37,7 @@ p {
 p {
   a, span {
     text-decoration: none;
+    color: $orange;
+    font-weight: bold;
   }
-}
-
-.textlogin {
-  width: 50%;
-  margin-bottom: 80px;
-  margin-top: 50px;
-  align-items: center;
-}
-
-.login {
-  padding-left: 0;
 }

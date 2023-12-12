@@ -1,16 +1,23 @@
 .custom-carousel {
-  padding-top: 50px;
-  width: 50%;
-  height: 200px; 
+  padding-top: 2.5em;
   margin: auto; 
-  
+  width: 80%;
 }
 
 .d-block {
   width: 100%;
-  height: 500px;;
+  height: calc(60vh - 56px);
   object-fit: cover;
   object-position: center;
+    @media (max-height: 900px) {
+      height: calc(45vh - 2em);
+    }
+    @media (max-height: 686px) {
+        height: calc(40vh - 2em);
+    }
+    @media (max-height: 576px) {
+      height: calc(35vh - 2em);
+}
 }
 
 .info {
@@ -34,3 +41,4 @@
   justify-content: center;
   margin-top: 50px;
 }
+

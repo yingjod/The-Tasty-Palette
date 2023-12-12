@@ -1,0 +1,14 @@
+.footer {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+  padding: 35px 0px;
+  text-align: center;
+
+  .links{
+    text-decoration: none;
+    color: $orange;
+  }
+  
+}
