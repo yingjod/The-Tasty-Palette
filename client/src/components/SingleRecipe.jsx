@@ -142,14 +142,7 @@ export default function SingleRecipe() {
           <button type="submit">Submit Review</button>
         </form>
       </div>
+      </div>
     </>
-  )
+  );
 }
-
-
-
-
-
-
-
-
