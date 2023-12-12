@@ -15,11 +15,12 @@ import ErrorPage from './components/ErrorPage'
 import Register from './components/Register'
 import Login from './components/Login'
 import RecipeCreate from './components/RecipeCreate'
+import RecipeEdit from './components/RecipeEdit.jsx'
 
 
 // Loaders
 import { getAllRecipes, getSingleRecipe } from './utilities/loaders/recipes.js'
-import { CreateRecipe } from './utilities/actions/CreateRecipe'
+import { CreateRecipe, editRecipe } from './utilities/actions/CreateRecipe'
 import { registerUser, loginUser } from './utilities/actions/auth'
 
 
@@ -47,6 +48,12 @@ const router = createBrowserRouter([
         path: '/recipes/create',
         element: <RecipeCreate />,
         action: async ({ request }) => CreateRecipe(request),
+      },
+      {
+        path: '/recipes/:recipeId/edit',
+        element: <RecipeEdit />,
+        action: async ({ request, params }) => editRecipe(request, params.recipeId),
+        loader: async ({ params }) => getSingleRecipe(params.recipeId)
       },
       {
         path: '/register',

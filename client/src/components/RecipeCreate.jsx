@@ -26,9 +26,6 @@ export default function RecipeCreate() {
         <label hidden htmlFor="title"></label>
         <input className="createtittle" type="text" name="title" placeholder='Dish Name' /><br />
 
-
-
-
         <label hidden htmlFor="category"></label>
         <input className="createcategory" type="text" name="category" placeholder='Category' /><br />
 
