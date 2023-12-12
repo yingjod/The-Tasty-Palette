@@ -59,7 +59,7 @@ export const updateRecipe = async (req, res) => {
     if (!recipe) {
       return res.status(404).json({ message: 'Recipe not found' })
     }
-
+    console.log('recipe->', recipe.ingredients[0].split(','))
     console.log('User making request ->', req.currentUser._id)
     console.log('User that owns recipe ->', recipe.owner)
     console.log('Does user match owner?', recipe.owner.equals(req.currentUser._id))
@@ -68,6 +68,8 @@ export const updateRecipe = async (req, res) => {
       return res.status(401).json({ message: 'Unauthorized' })
     }
     Object.assign(recipe, req.body)
+    recipe.ingredients = recipe.ingredients[0].split(',')
+    console.log(recipe)
     await recipe.save()
     return res.json(recipe)
   } catch (error) {

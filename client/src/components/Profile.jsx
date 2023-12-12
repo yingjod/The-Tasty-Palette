@@ -1,28 +1,24 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
-import { getToken } from '../utilities/helpers/common';
-import ErrorPage from './ErrorPage';
-
-import Stars from './Stars'
+import { getToken } from '../utilities/helpers/common'
+import ErrorPage from './ErrorPage'
+import renderStars from './Stars'
 import { Link, useNavigate } from 'react-router-dom'
 
-const UserProfile = () => {
-
-  const navigate = useNavigate()
-
+export default function Profile() {
   const [profile, setProfile] = useState({})
-
+  const navigate = useNavigate()
+  
 
   useEffect(() => {
     async function getUserProfile() {
       try {
-        if (getToken) {
+        if (getToken()) {
           const { data: profile } = await axios.get('/api/profile', {
             headers: {
               Authorization: `Bearer ${getToken()}`,
             },
           })
-
           setProfile(profile)
         } else {
           navigate('/login')
@@ -34,56 +30,67 @@ const UserProfile = () => {
     getUserProfile()
   }, [])
 
+  const handleDeleteRecipe = async (recipeId) => {
+    try {
+      // console.log('Deleting recipe with ID:', recipe._id)
+      const response = await axios.delete(`/api/recipes/${recipeId}`, {
+        headers: {
+          Authorization: `Bearer ${getToken()}`,
+        },
+      })
+      console.log('Recipe deleted:', response)
+      const { data: profile } = await axios.get(`/api/profile`, {
+        headers: {
+          Authorization: `Bearer ${getToken()}`,
+        },
+      })
+      // Update the component state
+      setProfile(profile)
+    } catch (error) {
+      console.error('Error deleting review:', error)
+  
+      // Log the specific response received
+      if (error.response) {
+        console.error('Response data:', error.response.data)
+      }
+    }
+  }
+  
   
   return (
     <>
       {profile ?
-        <div className="page">
-          <div className="profileHeader">
-            <h1>{profile.username}</h1>
-            
-          </div>
-
-          <div className="container">
             <div className="profileBody">
-              <h2>{profile.username} Recipes</h2>
-              
-              <div className="cards" >
+              <div className='profile-title'>
+                <h2>{profile.username}&apos;s Recipes</h2> 
+              </div>
+              <div className="recipe-cards" >
                 {profile.recipesCreated &&
-                  profile.recipesCreated.map(recipe => {
-                    return <div key={recipe._id} className='recipeCard'>
-                      <Link to={`/recipes/${recipe._id}`}>
-                        <img className="searchIMG" src={recipe.poster} alt="recipe" />
-                      </Link>
-                      <div className="cardDetails">
-                        <div className="title">
-                          <h4>{recipe.title}</h4>
-                        </div>
-
-                        <Stars rating={recipe.avgRating} />
-
+                  profile.recipesCreated.map((recipe, idx) => {
+                    return (
+                      <div key={idx} className="card-layout">
+                        <Link key={recipe._id} to={`/recipes/${recipe._id}`} className="card-layout">
+                          <div className="card" style={{width: '20rem'}}>
+                            <img className="card-img-top" src={recipe.poster} alt={recipe.title} style={{height: '150px', objectFit: 'cover'}}/>
+                            <div className="card-body">
+                              <h5 className="text-center bold card-title">{recipe.title}</h5>
+                              <div className="stars">{renderStars(recipe.avgRating)}</div>
+                            </div>
+                          </div> 
+                        </Link>
+                        <Link to={`/recipes/${recipe._id}/edit`} className="edit-link">Edit Recipe</Link>
+                        <button className="delete-btn" onClick={() => handleDeleteRecipe(recipe._id)}>Delete Recipe</button>
                       </div>
-
-                    </div>
+                    )
                   })
-
                 }
               </div>
             </div>
-
-          </div>
-        </div>
         :
         <>
-
             <ErrorPage />
-            :
-            <h2>Loading...</h2>
-
         </>
       }
     </>
   )
 }
-
-export default UserProfile

@@ -1,0 +1,17 @@
+.profile-title {
+  display: block;
+  text-align: center;
+}
+
+.edit-link {
+  @include flex(row, center, center);
+  text-decoration: none;
+  color: $lightgreen;
+  font-weight: bold;
+  border: 2px solid $lightgreen;
+  margin-bottom: 5px;
+}
+
+.button {
+  background-color: transparent;
+}

@@ -10,5 +10,9 @@
     text-decoration: none;
     color: $orange;
   }
+
+  @media (max-width: 408px) {
+    flex-direction: column;
+  }
   
 }

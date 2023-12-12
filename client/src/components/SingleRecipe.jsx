@@ -26,7 +26,7 @@ export default function SingleRecipe() {
       // Fetch updated recipe data after creating the review
       const updatedRecipe = await axios.get(`/api/recipes/${recipe._id}`);
       // Update the component state with the latest recipe data
-      setRecipe(updatedRecipe.data);
+      updatedRecipe && setRecipe(updatedRecipe.data);
     } catch (error) {
       console.error('Error creating review:', error);
     }
@@ -45,18 +45,18 @@ export default function SingleRecipe() {
         },
       });
   
-      console.log('Review deleted:', response.data);
+      console.log('Review deleted:', response.data)
   
       // Fetch updated recipe data after deleting the review
-      const updatedRecipe = await axios.get(`/api/recipes/${recipe._id}`);
+      const updatedRecipe = await axios.get(`/api/recipes/${recipe._id}`)
       // Update the component state with the latest recipe data
       setRecipe(updatedRecipe.data);
     } catch (error) {
-      console.error('Error deleting review:', error);
+      console.error('Error deleting review:', error)
   
       // Log the specific response received
       if (error.response) {
-        console.error('Response data:', error.response.data);
+        console.error('Response data:', error.response.data)
       }
     }
   };
@@ -91,6 +91,7 @@ export default function SingleRecipe() {
         {/* <p>{recipe.ingredients}</p> */}
         <h3 className='single-recipe-title'>Method</h3>
         <p className='method'>{recipe.method}</p>
+        
 
         <div className='review-section'>
           <h3 className='review-title'>Reviews</h3>
@@ -144,5 +145,5 @@ export default function SingleRecipe() {
       </div>
       </div>
     </>
-  );
+  )
 }

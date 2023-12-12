@@ -3,7 +3,6 @@ import { Form, useActionData, useNavigate } from 'react-router-dom'
 import textcreat from '../images/text-CreateRecipe.png'
 import ImageUploadField from '../components/ImageUploadField'
 
-
 export default function RecipeCreate() {
   const res = useActionData()
   const navigate = useNavigate()
@@ -12,8 +11,7 @@ export default function RecipeCreate() {
     if (res?.status === 201) {
       console.log('created successfully')
       navigate(`/recipes/${res.data._id}`)
-
-    }
+    } 
   }, [res, navigate])
 
 
@@ -48,19 +46,19 @@ export default function RecipeCreate() {
 
 
           <label hidden htmlFor="category"></label>
-          <input className="createcategory" type="text" name="category" placeholder='Category' onChange={handleChange} value={formData.category} /><br />
+          <input className="createcategory" type="text" name="category" placeholder='Continent' onChange={handleChange} value={formData.category} /><br />
 
           <label hidden htmlFor="description"></label>
           <textarea className="createdescription" type="number" name="description" placeholder='Description' onChange={handleChange} value={formData.description}></textarea><br />
 
           <label hidden htmlFor="prepTime"></label>
-          <input className="createprepTime" type="text" name="prepTime" placeholder='PREP Time(mins)' onChange={handleChange} value={formData.prepTime} /><br />
+          <input className="createprepTime" type="text" name="prepTime" placeholder='Prep Time (mins)' onChange={handleChange} value={formData.prepTime} /><br />
 
           <label hidden htmlFor="ingredients"></label>
           <input className="createingredients" type="text" name="ingredients" placeholder='Ingredients' onChange={handleChange} value={formData.ingredients} /><br />
 
           <label hidden htmlFor="method"></label>
-          <textarea className="createmethod" name="method" placeholder='method' onChange={handleChange} value={formData.method} ></textarea><br />
+          <textarea className="createmethod" name="method" placeholder='Method' onChange={handleChange} value={formData.method} ></textarea><br />
 
           <ImageUploadField setFormData={setFormData} formData={formData} />
 

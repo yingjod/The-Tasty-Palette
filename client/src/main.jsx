@@ -69,7 +69,7 @@ const router = createBrowserRouter([
       {
         path: '/profile',
         element: <Profile />,
-        // action: async ({ request }) => loginUser(request)
+  
       },
     ]
   }
