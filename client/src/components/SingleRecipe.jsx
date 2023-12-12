@@ -1,50 +1,4 @@
 
-// import { useLoaderData } from "react-router-dom";
-
-// export default function SingleRecipe() {
-//   const recipe = useLoaderData();
-//   const { title, description, prepTime, ingredients, method, poster, reviews } = recipe;
-
-//   console.log('Reviews:', reviews); // Add this line for debugging
-
-//   return (
-//     <>
-//       <div>
-//         <h2>{title}</h2>
-//         <img src={poster} alt={`Image of ${title}`} />
-//         <p>{description}</p>
-//         <p>{prepTime} mins</p>
-//         <p>{ingredients}</p>
-//         <p>{method}</p>
-        
-//         <h3>Reviews</h3>
-//         {reviews && reviews.length > 0 ? (
-//           <ul style={{ listStyle: 'none', padding: 0 }}>
-//             {reviews.map((review, index) => (
-//               <li key={index}>
-//                 {review.rating !== undefined && (
-//                   <div>
-//                     <p style={{ margin: 0, padding: 0 }}>
-//                       {/* Display stars based on the rating */}
-//                       {Array(review.rating).fill().map((_, starIndex) => (
-//                         <span key={starIndex}>★</span>
-//                       ))}
-//                       {/* Display the username who gave the rating */}
-//                       {review.owner && review.owner.username ? ` Rated by ${review.owner.username}` : 'Unknown User'}
-//                     </p>
-//                     {review.text && <p>{`Comment: ${review.text}`}</p>}
-//                   </div>
-//                 )}
-//               </li>
-//             ))}
-//           </ul>
-//         ) : (
-//           <p>No reviews yet.</p>
-//         )}
-//       </div>
-//     </>
-//   );
-// }
 
 import { useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
@@ -70,68 +24,125 @@ export default function SingleRecipe() {
       console.log('Review created:', response.data);
       setFormData({ rating: 5, text: '' });
       // Fetch updated recipe data after creating the review
-      // You may need to modify the endpoint or add additional logic based on your server setup
       const updatedRecipe = await axios.get(`/api/recipes/${recipe._id}`);
       // Update the component state with the latest recipe data
-      // This assumes that the server returns the entire recipe including reviews
       setRecipe(updatedRecipe.data);
     } catch (error) {
       console.error('Error creating review:', error);
     }
   };
 
+
+
+  const handleDeleteReview = async (reviewId) => {
+    console.log('Deleting review with IDs:', recipe._id, reviewId);
+    try {
+      console.log('Attempting to delete review:', reviewId);
+  
+      const response = await axios.delete(`/api/recipes/${recipe._id}/reviews/${reviewId}`, {
+        headers: {
+          Authorization: `Bearer ${getToken()}`,
+        },
+      });
+  
+      console.log('Review deleted:', response.data);
+  
+      // Fetch updated recipe data after deleting the review
+      const updatedRecipe = await axios.get(`/api/recipes/${recipe._id}`);
+      // Update the component state with the latest recipe data
+      setRecipe(updatedRecipe.data);
+    } catch (error) {
+      console.error('Error deleting review:', error);
+  
+      // Log the specific response received
+      if (error.response) {
+        console.error('Response data:', error.response.data);
+      }
+    }
+  };
+  
+
   return (
     <>
       <div>
         <h2>{recipe.title}</h2>
-        <img src={recipe.poster} alt={`Image of ${recipe.title}`} />
-        <p>{recipe.description}</p>
-        <p>{recipe.prepTime} mins</p>
-        <p>{recipe.ingredients}</p>
-        <p>{recipe.method}</p>
+      </div>
 
-        <h3>Reviews</h3>
-        {recipe.reviews && recipe.reviews.length > 0 ? (
-          <ul style={{ listStyle: 'none', padding: 0 }}>
-            {recipe.reviews.map((review, index) => (
+      <div className='img-ing'>
+        <img className="single-img" src={recipe.poster} alt={`Image of ${recipe.title}`} />
+        <div className="ing-div">
+          <h3 className='single-recipe-title'>Ingredients</h3>
+          <ul className='ingredient-list'>
+            {recipe.ingredients.map((ingredient, index) => (
               <li key={index}>
-                <p style={{ margin: 0, padding: 0 }}>
-                  {Array(review.rating).fill().map((_, starIndex) => (
-                    <span key={starIndex}>⭐️</span>
-                  ))}
-                  {review.owner && review.owner.username ? ` Rated by ${review.owner.username}` : 'Unknown User'}
-                </p>
-                {review.text && <p>{`Comment: ${review.text}`}</p>}
-              </li>
+                {ingredient}</li>
             ))}
           </ul>
-        ) : (
-          <p>No reviews yet.</p>
-        )}
-
-        <form onSubmit={handleSubmitReview}>
-          <label>
-            Rating:
-            <input
-              type="number"
-              name="rating"
-              value={formData.rating}
-              onChange={handleInputChange}
-              min="1"
-              max="5"
-            />
-          </label>
-          <label>
-            Comment:
-            <textarea
-              name="text"
-              value={formData.text}
-              onChange={handleInputChange}
-            />
-          </label>
-          <button type="submit">Submit Review</button>
-        </form>
+        </div>
       </div>
+
+      <div>
+        <h3 className='single-recipe-title'>Preparation Time</h3>
+        <p className='prep'>{recipe.prepTime} mins</p>
+        <h3 className='single-recipe-title'>Description</h3>
+        <p className='description'>{recipe.description}</p>
+        {/* <p>{recipe.ingredients}</p> */}
+        <h3 className='single-recipe-title'>Method</h3>
+        <p className='method'>{recipe.method}</p>
+
+        <div className='review-section'>
+          <h3 className='review-title'>Reviews</h3>
+            {recipe.reviews && recipe.reviews.length > 0 ? (
+              <ul style={{ listStyle: 'none', padding: 0 }}>
+                {recipe.reviews.map((review, index) => (
+                  <li key={index}>
+                    <div>
+                      <p style={{ margin: 0, padding: 0 }}>
+                        {Array(review.rating).fill().map((_, starIndex) => (
+                          <span key={starIndex}>★</span>
+                        ))}
+                        {review.owner && review.owner.username ? `${'\u00a0'} Rated by ${review.owner.username}` : 'Unknown User'}
+                      </p>
+                      {review.text && <p>{`Comment: ${review.text}`}</p>}
+                    </div>
+                    <button onClick={() => handleDeleteReview(review._id)}>
+                  Delete Review
+                </button>
+              </li>
+                ))}
+              </ul>
+            ) : (
+              <p className='review-text'>No reviews yet.</p>
+            )}
+        </div>
+      </div>
+
+      
+        <form className='review-form-container' onSubmit={handleSubmitReview}>
+          {/* <div className='submit-review'> */}
+            <label>
+              Rating: {'\u00a0'}
+              <input
+                type="number"
+                name="rating"
+                value={formData.rating}
+                onChange={handleInputChange}
+                min="1"
+                max="5"
+              />
+            </label>
+            <label>
+              Comment:{'\u00a0'}
+              <textarea
+                name="text"
+                value={formData.text}
+                onChange={handleInputChange}
+              />
+            </label>
+          {/* </div> */}
+          <button className="review-btn" type="submit">Submit Review</button>
+        </form>
+    
     </>
   )
 }

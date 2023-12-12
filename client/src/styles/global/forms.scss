@@ -29,7 +29,7 @@
 }
 
 .registerbtn:hover {
-  background-color: darkblue; /* Change color on hover */
+  background-color: #9CA777; /* Change color on hover */
 }
 
 .registerbtn:active {
@@ -44,6 +44,11 @@ p {
 .register-link {
   color: #FF7C5E;
   font-weight: bold;
+}
+
+.register-link:hover {
+  background-color: #9CA777; /* Change color on hover */
+  color: #FEE8B0;
 }
 
 p {

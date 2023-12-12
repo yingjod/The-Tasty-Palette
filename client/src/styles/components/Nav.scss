@@ -27,10 +27,8 @@
     color: #FEE8B0;
   }
   nav {
-    display: flex;
-    align-items: left;
-    justify-content: left;
-    a, span {
+    @include flex(column, left, left);
+    a, span, .logout {
       color: #FEE8B0;
       text-decoration: none;
       cursor: pointer;
@@ -39,18 +37,8 @@
   }
 }
 
-.logout {
-  color: #FEE8B0;
-  text-decoration: none;
-  cursor: pointer;
-  font-size: 3em;
-}
-
 .navbar{
-  display: flex;
-  flex-direction: row-reverse;
-  justify-content: space-between;
-  align-items: center;
+  @include flex(row-reverse, center, space-between);
   padding: 1.5em;
   background-color: #7C9070;
 }
