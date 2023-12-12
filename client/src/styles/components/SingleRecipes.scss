@@ -1,16 +1,20 @@
+// Name of recipe
 h2 {
   font-size: 2.5em;
   color: #FF7C5E;
   padding: 50px 0px 0px 50px;
 }
 
-h3 {
+// Headings within recipe
+.single-recipe-title {
+  margin-bottom: 2px;
   padding-left: 50px;
   font-size: 1em;
   color: #FF7C5E;
   font-weight: bold;
 }
 
+// Image and ingredients
 .single-img {
   padding: 25px 0px 25px 50px;
   height: 30em;
@@ -19,16 +23,9 @@ h3 {
   }
 }
 
-.single-recipe-title {
-  margin-bottom: 2px;
-}
-
-.ingredients, ul {
-  padding-left: 50px;
-}
-
 .ing-div {
   padding-top: 25px;
+  padding-left: 25px;
 }
 
 .img-ing {
@@ -42,11 +39,13 @@ h3 {
   color: #7C9070;
   padding-left: 65px;
 }
-  
+
+// Main body of page
 .method, 
 .description,
 .prep,
-.ingredients {
+.ingredients, 
+.continent {
   display: flex;
   justify-content: left;
   padding-left: 50px;
@@ -54,21 +53,40 @@ h3 {
   margin-bottom: 8px;
   }
 
-// Reviews section
-
+// View, edit, delete reviews
 .review-section {
   padding: 25px 0px 25px 0px;
   background-color: #FEE8B0;
   .review-title {
+    color: #FF7C5E;
     text-align: center;
     font-size: 1.5em;
     padding-left: 0;
   }
   .review-text, li {
     color: #7C9070;
+    text-align: center
   }
 }
 
+.delete-btn-container {
+  @include flex-center(row);
+  margin-bottom: 10px;
+}
+
+.delete-btn {
+  @include button;
+}
+
+.comment {
+    margin-bottom: 5px;
+  }
+
+.star-rating {
+  margin-bottom: 0px;
+}
+
+// Submit review
 .review-form-container {
   @include flex(row, center, space-around);
   padding: 1.5em 10em 1.5em 10em;
