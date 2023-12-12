@@ -14,7 +14,7 @@ export default function RecipeCreate() {
       navigate(`/recipes/${res.data._id}`)
 
     }
-  }, [res])
+  }, [res, navigate])
 
 
   const [formData, setFormData] = useState({

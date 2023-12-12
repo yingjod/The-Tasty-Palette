@@ -16,6 +16,7 @@ import Register from './components/Register'
 import Login from './components/Login'
 import RecipeCreate from './components/RecipeCreate'
 import RecipeEdit from './components/RecipeEdit.jsx'
+import Profile from './components/Profile.jsx'
 
 
 // Loaders
@@ -64,7 +65,12 @@ const router = createBrowserRouter([
         path: '/login',
         element: <Login />,
         action: async ({ request }) => loginUser(request)
-      }
+      },
+      {
+        path: '/profile',
+        element: <Profile />,
+        // action: async ({ request }) => loginUser(request)
+      },
     ]
   }
 ])
