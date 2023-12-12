@@ -11,7 +11,7 @@ import Col from 'react-bootstrap/Col'
 
 export default function Footer(){
   return (
-    <footer>
+    <footer className='footer'>
       <Container>
       <Row className='footer'>
         <Col>

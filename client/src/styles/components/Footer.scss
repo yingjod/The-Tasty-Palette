@@ -3,8 +3,10 @@
   justify-content: center;
   flex-direction: row;
   align-items: center;
-  padding: 35px 0px;
+  padding: 30px 0px;
   text-align: center;
+  color: $orange;
+  background-color: $darkgreen;
 
   .links{
     text-decoration: none;
