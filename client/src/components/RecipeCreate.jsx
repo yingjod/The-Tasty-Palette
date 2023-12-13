@@ -62,11 +62,13 @@ export default function RecipeCreate() {
           <label hidden htmlFor="method"></label>
           <textarea className="createmethod" name="method" placeholder='Method' onChange={handleChange} value={formData.method} ></textarea><br />
 
-          <ImageUploadField setFormData={setFormData} formData={formData} />
+          <div className="upload-and-submit">
+            <ImageUploadField setFormData={setFormData} formData={formData} />
 
-          {res && <p className="danger">{res.data.message}</p>}
+            {res && <p className="danger">{res.data.message}</p>}
 
-          <button className="createbtn" type="submit">Create</button><br /><br />
+            <button className="createbtn" type="submit">Create</button>
+          </div>
         </div>
 
       </Form>

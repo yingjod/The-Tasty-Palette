@@ -45,13 +45,10 @@
 }
 
 .createbtn{
-  background-color: #FF7C5E;
-  border-radius: 5px;
+  @include button;
   height: 50px;
   width: 150px;
   font-size: 20px;
-  color: white;
-  border:none;
 }
 
 .createbtn:hover {
@@ -60,4 +57,11 @@
 
 .createbtn:active {
   transform: translate(1px, 1px); /* Move button 2px down on click */
+}
+
+.upload-and-submit {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }

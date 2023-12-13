@@ -26,6 +26,9 @@ h2 {
 .ing-div {
   padding-top: 25px;
   padding-left: 25px;
+  @media (max-width: 992px) {
+    padding-left: 0;
+  }
 }
 
 .img-ing {
@@ -56,26 +59,34 @@ h2 {
 // View, edit, delete reviews
 .review-section {
   padding: 25px 0px 25px 0px;
-  background-color: #FEE8B0;
+  background-color: #9CA777;
   .review-title {
     color: #FF7C5E;
     text-align: center;
     font-size: 1.5em;
     padding-left: 0;
   }
-  .review-text, li {
-    color: #7C9070;
+  .review-text {
+    color: #FFFADD;
+  }
+  p {
     text-align: center
   }
 }
 
 .delete-btn-container {
   @include flex-center(row);
-  margin-bottom: 10px;
+  margin-bottom: 1em;
+  margin-top: 1em
 }
 
 .delete-btn {
   @include button;
+}
+
+.delete-btn:hover {
+  background-color: #FEE8B0; /* Change color on hover */
+  color: #FF7C5E;
 }
 
 .comment {
@@ -88,11 +99,16 @@ h2 {
 
 // Submit review
 .review-form-container {
-  @include flex(row, center, space-around);
+  @include flex(row, center, space-evenly);
   padding: 1.5em 10em 1.5em 10em;
   color: #7C9070;
   input {
     color: #7C9070;
+    background-color: #FEE8B0;
+    border: none;
+    height: 30px;
+    border-radius: 5px;
+    font-size: 1em;
   }
   @media (max-width: 862px) {
     flex-direction: column;
@@ -107,7 +123,7 @@ h2 {
   height: 30px;
   width: 150px;
   font-size: 1em;
-  color: white;
+  color: #FFFADD;
   border:none;
   @include flex-center(row);
   @media (max-width: 862px) {
@@ -116,6 +132,16 @@ h2 {
     align-items: center;
     margin-top: 1em;
   }
+}
+
+.review-btn:hover {
+  background-color: #FEE8B0; /* Change color on hover */
+  color: #FF7C5E;
+}
+
+.review-btn-container {
+  display: flex;
+  justify-content: center;
 }
 
 label {
@@ -130,5 +156,20 @@ label {
 }
 
 textarea {
-  width: 200px;
+  width: 400px;
+  background-color: #FEE8B0;
+  border: none;
+  height: 30px;
+  border-radius: 5px;
+  font-size: 1em;
 }
+
+.label-text {
+  color: #FFFADD;
+  align-items: center;
+
+}
+
+// label.label-text {
+//   height: 200px;
+// }
