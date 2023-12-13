@@ -1,4 +1,5 @@
 import axios from 'axios'
+import { useEffect} from 'react'
 
 export default function ImageUploadField({ formData, setFormData }){
 
@@ -14,16 +15,26 @@ export default function ImageUploadField({ formData, setFormData }){
     data.append('upload_preset', preset)
 
     // Send the form data to the API endpoint
+  
     const { data: { secure_url }} = await axios.post(endpoint, data)
-    
+    console.log('data=>',data)
+    console.log('secure_url=>',secure_url)
+
     // Set form data to image url
-    setFormData({ ...formData, poster: secure_url ,})
+    setFormData({ ...formData, poster: secure_url })
+    console.log('formData=>',formData)
   }
+
+  useEffect(() => {
+    // Perform any side effects related to state changes here
+    console.log('Updated FormData:', formData);
+  }, [formData]);
 
   return (
     <>
-      {formData.poster?
-        <img src={formData.poster} alt="Poster" />
+      {
+      formData.poster? 
+        <img src={formData.poster} alt="poster" />
         :
         <input type="file" name="poster" onChange={handleImageUpload} />
       }
