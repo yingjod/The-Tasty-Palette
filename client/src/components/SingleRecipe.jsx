@@ -103,7 +103,7 @@ export default function SingleRecipe() {
         <p className='method'>{recipe.method}</p>
         
 
-        <div className='review-section'>
+        <div className='review-section' style={{ maxHeight: '300px', overflowY: 'auto' }}>
           <h3 className='review-title'>Reviews</h3>
             {recipe.reviews && recipe.reviews.length > 0 ? (
               <ul style={{ listStyle: 'none', padding: 0 }}>
