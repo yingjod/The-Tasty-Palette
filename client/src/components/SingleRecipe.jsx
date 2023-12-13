@@ -5,6 +5,9 @@ import { useLoaderData } from 'react-router-dom';
 import { getToken } from '../utilities/helpers/common';
 import axios from 'axios';
 
+// Helpers
+import { activeUser } from '../utilities/helpers/common';
+
 export default function SingleRecipe() {
   const [recipe, setRecipe] = useState(useLoaderData());
   const [formData, setFormData] = useState({ rating: 5, text: '' });
@@ -109,9 +112,11 @@ export default function SingleRecipe() {
                       {review.text && <p className='comment'>{`Comment: ${review.text}`}</p>}
                     </div>
                     <div className='delete-btn-container'>
+                      {activeUser && review.owner && activeUser.id === review.owner.id && (
                       <button className="delete-btn" onClick={() => handleDeleteReview(review._id)}>
                       Delete Review
                       </button>
+                      )}
                     </div>
               </li>
             ))}
