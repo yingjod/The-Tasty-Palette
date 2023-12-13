@@ -1,6 +1,6 @@
 
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import { getToken } from '../utilities/helpers/common';
 import axios from 'axios';
@@ -11,6 +11,13 @@ import { activeUser } from '../utilities/helpers/common';
 export default function SingleRecipe() {
   const [recipe, setRecipe] = useState(useLoaderData());
   const [formData, setFormData] = useState({ rating: 5, text: '' });
+  const [loggedInUser, setLoggedInUser] = useState(null);
+
+  useEffect(() => {
+    // Set the logged-in user when the component mounts
+    const user = activeUser();
+    setLoggedInUser(user);
+  }, []);
 
   const handleInputChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -112,7 +119,7 @@ export default function SingleRecipe() {
                       {review.text && <p className='comment'>{`Comment: ${review.text}`}</p>}
                     </div>
                     <div className='delete-btn-container'>
-                      {activeUser && review.owner && activeUser.id === review.owner.id && (
+                      {loggedInUser && review.owner && loggedInUser === review.owner.id && (
                       <button className="delete-btn" onClick={() => handleDeleteReview(review._id)}>
                       Delete Review
                       </button>
