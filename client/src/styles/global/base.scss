@@ -1,5 +1,6 @@
 body {
   flex-grow: 1;
+  color: $orange;
 }
 
 #root {
@@ -11,6 +12,13 @@ body {
 main {
   flex-grow: 1;
 }
+
+.centred {
+  @extend %flex-fill;
+  justify-content: center;
+  align-items: center;
+}
+
 
 h1 {
   padding-top: 1em;
