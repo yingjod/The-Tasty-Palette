@@ -39,7 +39,7 @@ export default function RecipeCreate() {
     <>
       {/* <Form method="post" className="createform" onSubmit={handleSubmit} > */}
         <Form method="post" className="createform" >
-        <img src={textcreat} className="textcreate"></img><br />
+        <img src={textcreat} className="textrecipe"></img><br />
         <div className="formstlying">
 
 
