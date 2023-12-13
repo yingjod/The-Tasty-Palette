@@ -1,17 +1,27 @@
 .profile-title {
-  display: block;
+  @include flex(column, center, center);
   text-align: center;
 }
 
-.edit-link {
+.profile-bn-link {
   @include flex(row, center, center);
-  text-decoration: none;
-  color: $lightgreen;
-  font-weight: bold;
-  border: 2px solid $lightgreen;
-  margin-bottom: 5px;
 }
 
-.button {
-  background-color: transparent;
+.edit-link {
+  @include button;
+  padding: 1px 4px;
+  margin-right: 1px;
+  background-color: $lightgreen;
+  text-decoration: none;
+}
+
+.no-recipe {
+  font-size: 20px;
+  color: $orange;
+}
+
+.create-link {
+  @include button;
+  padding: 5px;
+  text-decoration: none;
 }

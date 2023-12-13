@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 import { getToken } from '../utilities/helpers/common'
-import ErrorPage from './ErrorPage'
+// import ErrorPage from './ErrorPage'
 import renderStars from './Stars'
 import { Link, useNavigate } from 'react-router-dom'
 
@@ -59,7 +59,7 @@ export default function Profile() {
   
   return (
     <>
-      {profile ?
+      {profile && profile.recipesCreated && profile.recipesCreated.length > 0 ?
             <div className="profileBody">
               <div className='profile-title'>
                 <h2>{profile.username}&apos;s Recipes</h2> 
@@ -78,8 +78,10 @@ export default function Profile() {
                             </div>
                           </div> 
                         </Link>
+                        <div className='profile-bn-link'>
                         <Link to={`/recipes/${recipe._id}/edit`} className="edit-link">Edit Recipe</Link>
                         <button className="delete-btn" onClick={() => handleDeleteRecipe(recipe._id)}>Delete Recipe</button>
+                        </div>
                       </div>
                     )
                   })
@@ -88,7 +90,11 @@ export default function Profile() {
             </div>
         :
         <>
-            <ErrorPage />
+            <div className='profile-title'>
+                <h2>{profile.username}&apos;s Profile</h2> 
+                <p className='no-recipe'>You have not created any recipes yet!</p>
+                <Link to={'/recipes/create'} className='create-link'>Create Recipe</Link>
+            </div>
         </>
       }
     </>
