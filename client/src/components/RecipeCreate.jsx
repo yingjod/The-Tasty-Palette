@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Form, useActionData, useNavigate } from 'react-router-dom'
 import textcreat from '../images/text-CreateRecipe.png'
-import ImageUploadField from '../components/ImageUploadField'
+import ImageUploadField from './ImageUploadField'
 
 export default function RecipeCreate() {
   const res = useActionData()
@@ -16,7 +16,7 @@ export default function RecipeCreate() {
   }, [res, navigate])
 
 
-  const [formData, setFormData] = useState({
+  const [ formData, setFormData ] = useState({
     title: '',
     category: '',
     description: '',
