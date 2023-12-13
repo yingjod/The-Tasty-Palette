@@ -4,7 +4,7 @@ import Recipe from '../models/recipe.js'
 import User from '../models/user.js'
 import recipeData from './data/recipes.js'
 import userData from './data/users.js'
-
+import reviewData from './data/review.js'
 
 
 // Function to seed the databases, from user to recipes.
@@ -26,7 +26,23 @@ async function seed(){
 
     const ownedRecipe = recipeData.map(recipe => {
       const randomUserIndex = Math.floor(Math.random() * usersCreated.length)
-      return { ...recipe, owner: usersCreated[randomUserIndex]._id }
+      const recipeWithReviews = {
+        ...recipe,
+        owner: usersCreated[randomUserIndex]._id,
+        reviews: [], // Initialize an empty array for reviews
+      }
+    
+      // Embed reviews into the recipe
+      reviewData.forEach(review => {
+        const randomReviewUserIndex = Math.floor(Math.random() * usersCreated.length)
+        const reviewWithText = {
+          ...review,
+          owner: usersCreated[randomReviewUserIndex]._id,
+          text: 'Sample review text', 
+        }
+        recipeWithReviews.reviews.push(reviewWithText)
+      })
+      return recipeWithReviews
     })
 
     const recipesCreated = await Recipe.create(ownedRecipe)
