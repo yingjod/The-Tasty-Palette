@@ -9,6 +9,7 @@ export default function RecipeCreate() {
   const navigate = useNavigate()
 
   useEffect(() => {
+  
     if (res?.status === 201) {
       console.log('created successfully')
       navigate(`/recipes/${res.data._id}`)
@@ -24,21 +25,22 @@ export default function RecipeCreate() {
     prepTime: 0,
     ingredients: [],
     method: '',
-    poster:'',
+    poster: ''
   })
 
   function handleChange(e) {
     setFormData({ ...formData, [e.target.name]: e.target.value })
   }
 
-  //function handleSubmit(e) {
-  //  e.preventDefault();
-  //}
+  // function handleSubmit(e) {
+  //   e.preventDefault();
+  //   console.log('Form Data:', formData)
+  // }
 
   return (
     <>
-    {/* <Form method="post" className="createform" onSubmit={handleSubmit} ></Form> */}
-      <Form method="post" className="createform" >
+      {/* <Form method="post" className="createform" onSubmit={handleSubmit} > */}
+        <Form method="post" className="createform" >
         <img src={textcreat} className="textcreate"></img><br />
         <div className="formstlying">
 
