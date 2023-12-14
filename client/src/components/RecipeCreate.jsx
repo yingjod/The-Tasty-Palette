@@ -15,7 +15,6 @@ export default function RecipeCreate() {
     }
   }, [res, navigate])
 
-
   const [formData, setFormData] = useState({
     title: '',
     category: '',
@@ -26,17 +25,30 @@ export default function RecipeCreate() {
     poster: ''
   })
 
+  const [setErrorMessage] = useState('');
+
   function handleChange(e) {
-    setFormData({ ...formData, [e.target.name]: e.target.value })
+    const { name, value } = e.target;
+
+    // Check if the entered value is a valid positive number
+    if (name === 'prepTime' && (isNaN(value) || parseInt(value) < 0)) {
+      // If not a valid positive number, set it to 0
+      setFormData({ ...formData, [name]: 0 });
+      // Set an error message
+      setErrorMessage('Prep time must be a valid positive number');
+    } else {
+      setFormData({ ...formData, [name]: value });
+      // Clear error message when a valid value is entered
+      setErrorMessage('');
+    }
   }
 
   return (
     <>
       {/* <Form method="post" className="createform" onSubmit={handleSubmit} > */}
-        <Form method="post" className="createform" >
+      <Form method="post" className="createform" >
         <img src={textcreat} className="textrecipe"></img><br />
         <div className="formstlying">
-
 
           <label hidden htmlFor="title"></label>
           <input className="createtitle" type="text" name="title" placeholder='Dish Name' onChange={handleChange} value={formData.title} /><br />
@@ -58,7 +70,6 @@ export default function RecipeCreate() {
             <option value="Oceania">Oceania</option>
           </select><br />
 
-
           <label hidden htmlFor="description"></label>
           <textarea className="createdescription" type="number" name="description" placeholder='Description...' onChange={handleChange} value={formData.description}></textarea><br />
 
@@ -71,13 +82,24 @@ export default function RecipeCreate() {
           <label hidden htmlFor="method"></label>
           <textarea className="createmethod" name="method" placeholder='Method...' onChange={handleChange} value={formData.method} ></textarea><br /><br />
 
-          <div className="upload-and-submit">
-            <ImageUploadField setFormData={setFormData} formData={formData} />
+          {/* <div className="upload-and-submit">
+            {/* <ImageUploadField setFormData={setFormData} formData={formData} /> */}
+            {/* <button className="createbtn" type="submit">Create</button> */}
 
-            {res && <p className="danger">{res.data.message}</p>}
+            {/* {res && <p className="danger">{res.data.message}</p>} */}
 
-            <button className="createbtn" type="submit">Create</button>
-          </div>
+
+          <div className="row">
+            <div className="col-md-8">
+              <ImageUploadField setFormData={setFormData} formData={formData} />
+            </div>
+            <div className="col-md-4 d-flex align-items-center justify-content-end">
+              <button className="btn btn-primary createbtn" type="submit">Create</button>
+            </div>
+          </div><br />
+
+          {res && <p className="dangerincreate">{res.data.message}</p>}
+
         </div>
 
       </Form>
