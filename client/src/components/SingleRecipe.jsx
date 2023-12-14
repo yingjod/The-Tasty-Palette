@@ -116,7 +116,7 @@ export default function SingleRecipe() {
                         ))}
                         {review.owner && review.owner.username ? `${'\u00a0'} Rated by ${review.owner.username}` : 'Unknown User'}
                       </p>
-                      {review.text && <p className='comment'>{`Comment: ${review.text}`}</p>}
+                      {review.text && <p className='comment'>{`${review.text}`}</p>}
                     </div>
                     <div className='delete-btn-container'>
                       {loggedInUser && review.owner && loggedInUser === review.owner.id && (

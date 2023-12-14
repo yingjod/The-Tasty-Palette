@@ -100,6 +100,9 @@ h2 {
 }
 
 // Submit review
+.review-section {
+  background-color: #9CA777;
+}
 .review-form-container {
   @include flex(row, center, space-evenly);
   padding: 1.5em 10em 1.5em 10em;

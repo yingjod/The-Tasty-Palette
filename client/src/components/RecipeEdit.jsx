@@ -36,25 +36,25 @@ export default function RecipeEdit(){
       <Form className='createform' method="POST">
         <div className="formstlying">
           <label hidden htmlFor="title"></label>
-            <input className="createtittle" type="text" name="title" placeholder='Dish Name' defaultValue={recipe.title}/><br />
+            <input className="createtitle" type="text" name="title" placeholder='Dish Name' defaultValue={recipe.title}/><br />
 
             <label hidden htmlFor="category"></label>
             <input className="createcategory" type="text" name="category" placeholder='Category' defaultValue={recipe.category}/><br />
 
             <label hidden htmlFor="description"></label>
-            <textarea className="createdescription" type="number" name="description" placeholder='Description' defaultValue={recipe.description}></textarea><br />
+            <textarea className="createdescription" type="number" name="description" placeholder='Description...' defaultValue={recipe.description}></textarea><br />
 
             <label hidden htmlFor="prepTime"></label>
-            <input className="createprepTime" type="text" name="prepTime" placeholder='PREP Time(mins)' defaultValue={recipe.prepTime} /><br />
+            <input className="createprepTime" type="text" name="prepTime" placeholder='Total Time (mins)' defaultValue={recipe.prepTime} /><br />
 
             <label hidden htmlFor="ingredients"></label>
             <input className="createingredients" type="text" name="ingredients" placeholder='Ingredients' defaultValue={recipe.ingredients} /><br />
 
             <label hidden htmlFor="poster"></label>
-            <input className="createposter" type="text" name="poster" placeholder='poster' defaultValue={recipe.poster}/><br />
+            <input className="createposter" type="text" name="poster" placeholder='Image' defaultValue={recipe.poster}/><br />
 
             <label hidden htmlFor="method"></label>
-            <textarea className="createmethod" name="method" placeholder='method' defaultValue={recipe.method}></textarea><br />
+            <textarea className="createmethod" name="method" placeholder='Method...' defaultValue={recipe.method}></textarea><br />
 
             <ImageUploadField setFormData={setFormData} formData={formData} />
             

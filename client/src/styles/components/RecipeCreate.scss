@@ -2,11 +2,15 @@
   height: 50px;
   width: 500px;
   font-size: 20px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
   margin-top: 10px;
+  color: #7C9070;
+  background-color: #FEE8B0;
+  border-radius: 5px;
+  border: none;
+  @media (max-width: 640px) {
+    width: 400px;
+  }
 }
-
 
 .createform {
   display: flex;
@@ -24,37 +28,40 @@
 }
 
 .formstlying {
-  background-color: rgba(246, 217, 217, 0.807);
+  background-color: #9CA777;
   padding: 50px;
   border-radius: 10px;
 }
 
 .createcategory ,
-.createtittle ,
+.createtitle ,
 .createprepTime,
 .createingredients,
-.createposter
+.createposter,
+.createdescription,
+.createmethod
 {
   @extend .create-form-input;
+  color: #7C9070;
 }
 
 .createdescription,
 .createmethod {
-  @extend .create-form-input;
   height: 200px;
 }
 
 .createbtn,
-.custom-file-upload{
+.custom-file-upload {
   background-color: #FF7C5E;
   border-radius: 5px;
   height: 50px;
   width: 150px;
   font-size: 20px;
-  color: white;
-  border:none;
-  text-align: center; 
-
+  color: #FEE8B0;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 input[type="file"] {
@@ -62,20 +69,17 @@ input[type="file"] {
 }
 
 .createbtn:hover {
-  background-color: darkblue; /* Change color on hover */
+  background-color: #FEE8B0; /* Change color on hover */
+  color: #9CA777;
 }
 
 .custom-file-upload:hover{
-  background-color: green; /* Change color on hover */
+  background-color: #FEE8B0; /* Change color on hover */
+  color: #9CA777;
 }
 
 .createbtn:active {
   transform: translate(1px, 1px); /* Move button 2px down on click */
-}
-
-.custom-file-upload{
-  padding-left: 20px ;
-  background-color: #f72b5b;
 }
 
 .preview{

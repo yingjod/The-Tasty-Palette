@@ -39,7 +39,7 @@ export default function RecipeCreate() {
 
 
           <label hidden htmlFor="title"></label>
-          <input className="createtittle" type="text" name="title" placeholder='Dish Name' onChange={handleChange} value={formData.title} /><br />
+          <input className="createtitle" type="text" name="title" placeholder='Dish Name' onChange={handleChange} value={formData.title} /><br />
 
           <label htmlFor="category" />
           <select
