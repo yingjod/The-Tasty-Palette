@@ -57,7 +57,7 @@ export default function RecipeEdit() {
             id="category"
             name="category"
             onChange={handleChange}
-            value={formData.category}
+            defaultValue={recipe.category}
           >
             <option value=""> - Select a category - </option>
             <option value="Europe">Europe</option>
@@ -76,9 +76,6 @@ export default function RecipeEdit() {
 
             <label hidden htmlFor="ingredients"></label>
             <input className="createingredients" type="text" name="ingredients" placeholder='Ingredients' defaultValue={recipe.ingredients} /><br />
-
-            <label hidden htmlFor="poster"></label>
-            <input className="createposter" type="text" name="poster" placeholder='Image' defaultValue={recipe.poster}/><br />
 
             <label hidden htmlFor="method"></label>
             <textarea className="createmethod" name="method" placeholder='Method...' defaultValue={recipe.method}></textarea><br />
