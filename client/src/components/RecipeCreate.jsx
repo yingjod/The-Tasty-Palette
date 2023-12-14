@@ -15,7 +15,6 @@ export default function RecipeCreate() {
     }
   }, [res, navigate])
 
-
   const [formData, setFormData] = useState({
     title: '',
     category: '',
@@ -26,8 +25,22 @@ export default function RecipeCreate() {
     poster: ''
   })
 
+  const [setErrorMessage] = useState('');
+
   function handleChange(e) {
-    setFormData({ ...formData, [e.target.name]: e.target.value })
+    const { name, value } = e.target;
+
+    // Check if the entered value is a valid positive number
+    if (name === 'prepTime' && (isNaN(value) || parseInt(value) < 0)) {
+      // If not a valid positive number, set it to 0
+      setFormData({ ...formData, [name]: 0 });
+      // Set an error message
+      setErrorMessage('Prep time must be a valid positive number');
+    } else {
+      setFormData({ ...formData, [name]: value });
+      // Clear error message when a valid value is entered
+      setErrorMessage('');
+    }
   }
 
   return (
@@ -36,7 +49,6 @@ export default function RecipeCreate() {
         <Form method="post" className="createform" >
         <img src={textcreat} className="textrecipe"></img><br />
         <div className="formstlying">
-
 
           <label hidden htmlFor="title"></label>
           <input className="createtittle" type="text" name="title" placeholder='Dish Name' onChange={handleChange} value={formData.title} /><br />
@@ -57,7 +69,6 @@ export default function RecipeCreate() {
             <option value="Africa">Africa</option>
             <option value="Oceania">Oceania</option>
           </select><br />
-
 
           <label hidden htmlFor="description"></label>
           <textarea className="createdescription" type="number" name="description" placeholder='Description...' onChange={handleChange} value={formData.description}></textarea><br />

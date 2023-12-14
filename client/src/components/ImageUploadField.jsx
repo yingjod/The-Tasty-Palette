@@ -42,3 +42,49 @@ export default function ImageUploadField({ formData, setFormData }) {
     </>
   )
 }
+
+// import axios from 'axios';
+
+// export default function ImageUploadField({ formData, setFormData }) {
+//   async function handleImageUpload(e) {
+//     const preset = import.meta.env.VITE_UPLOAD_PRESET;
+//     const file = e.target.files[0];
+//     const endpoint = import.meta.env.VITE_UPLOAD_URL;
+
+//     const data = new FormData();
+//     data.append('file', file);
+//     data.append('upload_preset', preset);
+
+//     try {
+//       const { data: { secure_url } } = await axios.post(endpoint, data);
+    
+//       console.log('Image upload successful');
+//       console.log('Previous formData:', formData);
+    
+//       setFormData(prevData => ({
+//         ...prevData,
+//         poster: secure_url,
+//       }));
+    
+//       console.log('Updated formData:', formData);
+//     } catch (error) {
+//       console.error('Error uploading image:', error);
+//     }
+// }
+
+//   return (
+//     <>
+//       {formData.poster ? (
+//         <>
+//           <img src={`${formData.poster}?timestamp=${new Date().getTime()}`} className="preview" alt="poster" /><br />
+//           <input type='hidden' name='poster' value={formData.poster} /><br />
+//         </>
+//       ) : (
+//         <>
+//           <input type="file" id="fileInput" name="poster" onChange={handleImageUpload} />
+//           <label htmlFor="fileInput" className="custom-file-upload">Select a file</label>
+//         </>
+//       )}
+//     </>
+//   );
+// }
