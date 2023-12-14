@@ -57,6 +57,8 @@ h2 {
 .review-section {
   padding: 25px 0px 25px 0px;
   background-color: #FEE8B0;
+  max-height: 300px;
+  overflow-y: auto;
   .review-title {
     color: #FF7C5E;
     text-align: center;
