@@ -94,7 +94,7 @@ export default function SingleRecipe() {
       <div>
         <h3 className='single-recipe-title'>Continent</h3>
         <p className='continent'>{recipe.category}</p>
-        <h3 className='single-recipe-title'>Preparation Time</h3>
+        <h3 className='single-recipe-title'>Total Time</h3>
         <p className='prep'>{recipe.prepTime} mins</p>
         <h3 className='single-recipe-title'>Description</h3>
         <p className='description'>{recipe.description}</p>
@@ -108,7 +108,7 @@ export default function SingleRecipe() {
             {recipe.reviews && recipe.reviews.length > 0 ? (
               <ul style={{ listStyle: 'none', padding: 0 }}>
                 {recipe.reviews.map((review, index) => (
-                  <li key={index}>
+                  <li className= 'review-text' key={index}>
                     <div>
                       <p className='star-rating'>
                         {Array(review.rating).fill().map((_, starIndex) => (
@@ -132,9 +132,13 @@ export default function SingleRecipe() {
           <p>No reviews yet.</p>
         )}
 
-        <form onSubmit={handleSubmitReview}>
-          <label>
-            Rating:
+        <form className='review-form-container' onSubmit={handleSubmitReview}>
+          <div className='spacer'></div>
+          <div className='spacer'></div>
+          <div className='spacer'></div>
+          <div className='spacer'></div>
+          <label className='label-text'>
+            Rating:{'\u00a0'}
             <input
               type="number"
               name="rating"
@@ -144,15 +148,19 @@ export default function SingleRecipe() {
               max="5"
             />
           </label>
-          <label>
-            Comment:
+          <label className='label-text'>
             <textarea
               name="text"
               value={formData.text}
               onChange={handleInputChange}
+              placeholder='Add review here'
             />
           </label>
-          <button type="submit">Submit Review</button>
+          <button className='review-btn' type="submit">Submit Review</button>
+          <div className='spacer'></div>
+          <div className='spacer'></div>
+          <div className='spacer'></div>
+          <div className='spacer'></div>
         </form>
       </div>
       </div>
