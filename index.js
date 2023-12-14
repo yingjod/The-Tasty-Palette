@@ -3,6 +3,13 @@ import mongoose from 'mongoose'
 import 'dotenv/config'
 import router from './config/routes.js'
 
+import 'dotenv/config' // only needs to be added if it doesn't already exist
+import path, { dirname } from 'path'
+import { fileURLToPath } from 'url'
+
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = dirname(__filename)
+
 
 // It's our variable 
 const app = express()
@@ -22,6 +29,15 @@ app.use((req, res, next) => {
 //! api is not added
 app.use('/api', router)
 
+
+// ** New lines **
+app.use(express.static(path.join(__dirname, 'client', 'dist')))
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'client', 'dist', 'index.html'))
+})
+
+
 // Start our Server
 
 async function startServer(){
@@ -35,3 +51,4 @@ async function startServer(){
   }
 }
 startServer()
+
