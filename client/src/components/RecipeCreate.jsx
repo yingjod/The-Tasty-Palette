@@ -33,7 +33,7 @@ export default function RecipeCreate() {
   return (
     <>
       {/* <Form method="post" className="createform" onSubmit={handleSubmit} > */}
-        <Form method="post" className="createform" >
+      <Form method="post" className="createform" >
         <img src={textcreat} className="textrecipe"></img><br />
         <div className="formstlying">
 
@@ -71,13 +71,24 @@ export default function RecipeCreate() {
           <label hidden htmlFor="method"></label>
           <textarea className="createmethod" name="method" placeholder='Method...' onChange={handleChange} value={formData.method} ></textarea><br /><br />
 
-          <div className="upload-and-submit">
-            <ImageUploadField setFormData={setFormData} formData={formData} />
+          {/* <div className="upload-and-submit">
+            {/* <ImageUploadField setFormData={setFormData} formData={formData} /> */}
+            {/* <button className="createbtn" type="submit">Create</button> */}
 
-            {res && <p className="danger">{res.data.message}</p>}
+            {/* {res && <p className="danger">{res.data.message}</p>} */}
 
-            <button className="createbtn" type="submit">Create</button>
-          </div>
+
+          <div className="row">
+            <div className="col-md-8">
+              <ImageUploadField setFormData={setFormData} formData={formData} />
+            </div>
+            <div className="col-md-4 d-flex align-items-center justify-content-end">
+              <button className="btn btn-primary createbtn" type="submit">Create</button>
+            </div>
+          </div><br />
+
+          {res && <p className="dangerincreate">{res.data.message}</p>}
+
         </div>
 
       </Form>
