@@ -8,19 +8,19 @@ export default function RecipeCreate() {
   const navigate = useNavigate()
 
   useEffect(() => {
-  
+
     if (res?.status === 201) {
       console.log('created successfully')
       navigate(`/recipes/${res.data._id}`)
-    } 
+    }
   }, [res, navigate])
 
 
-  const [ formData, setFormData ] = useState({
+  const [formData, setFormData] = useState({
     title: '',
     category: '',
     description: '',
-    prepTime: 0,
+    prepTime: '',
     ingredients: [],
     method: '',
     poster: ''
@@ -30,15 +30,9 @@ export default function RecipeCreate() {
     setFormData({ ...formData, [e.target.name]: e.target.value })
   }
 
-  // function handleSubmit(e) {
-  //   e.preventDefault();
-  //   console.log('Form Data:', formData)
-  // }
-
   return (
     <>
-      {/* <Form method="post" className="createform" onSubmit={handleSubmit} > */}
-        <Form method="post" className="createform" >
+      <Form method="post" className="createform" >
         <img src={textcreat} className="textcreate"></img><br />
         <div className="formstlying">
 
@@ -46,25 +40,39 @@ export default function RecipeCreate() {
           <label hidden htmlFor="title"></label>
           <input className="createtittle" type="text" name="title" placeholder='Dish Name' onChange={handleChange} value={formData.title} /><br />
 
+          <label htmlFor="category" />
+          <select
+            className="createcategory"
+            id="category"
+            name="category"
+            onChange={handleChange}
+            value={formData.category}
+          >
+            <option value=""> - Select a category - </option>
+            <option value="Europe">Europe</option>
+            <option value="Asia">Asia</option>
+            <option value="South America">South America</option>
+            <option value="North America">North America</option>
+            <option value="Africa">Africa</option>
+            <option value="Oceania">Oceania</option>
+          </select><br />
 
-          <label hidden htmlFor="category"></label>
-          <input className="createcategory" type="text" name="category" placeholder='Continent' onChange={handleChange} value={formData.category} /><br />
 
           <label hidden htmlFor="description"></label>
-          <textarea className="createdescription" type="number" name="description" placeholder='Description' onChange={handleChange} value={formData.description}></textarea><br />
+          <textarea className="createdescription" type="number" name="description" placeholder='Description...' onChange={handleChange} value={formData.description}></textarea><br />
 
           <label hidden htmlFor="prepTime"></label>
-          <input className="createprepTime" type="text" name="prepTime" placeholder='Prep Time (mins)' onChange={handleChange} value={formData.prepTime} /><br />
+          <input className="createprepTime" type="number" name="prepTime" placeholder='Total Time (mins)' onChange={handleChange} value={formData.prepTime} /><br />
 
           <label hidden htmlFor="ingredients"></label>
           <input className="createingredients" type="text" name="ingredients" placeholder='Ingredients' onChange={handleChange} value={formData.ingredients} /><br />
 
           <label hidden htmlFor="method"></label>
-          <textarea className="createmethod" name="method" placeholder='Method' onChange={handleChange} value={formData.method} ></textarea><br />
+          <textarea className="createmethod" name="method" placeholder='Method...' onChange={handleChange} value={formData.method} ></textarea><br /><br />
 
-          <ImageUploadField setFormData={setFormData} formData={formData} />
+          <ImageUploadField setFormData={setFormData} formData={formData} /><br />
 
-          {res && <p className="danger">{res.data.message}</p>}
+          {res && <p className="dangerincreate">{res.data.message}</p>}
 
           <button className="createbtn" type="submit">Create</button><br /><br />
         </div>
