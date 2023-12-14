@@ -3,7 +3,7 @@ import { Form, useActionData, useLoaderData, useNavigate } from 'react-router-do
 import textedit from '../images/text-editrecipe.png'
 import ImageUploadField from './ImageUploadField'
 
-export default function RecipeEdit(){
+export default function RecipeEdit() {
   const res = useActionData()
   const navigate = useNavigate()
   const recipe = useLoaderData()
@@ -16,7 +16,7 @@ export default function RecipeEdit(){
     }
   }, [res, navigate])
 
-  const [ formData, setFormData ] = useState({
+  const [formData, setFormData] = useState({
     title: '',
     category: '',
     description: '',
@@ -49,7 +49,7 @@ export default function RecipeEdit(){
       <Form className='createform' method="POST">
         <div className="formstlying">
           <label hidden htmlFor="title"></label>
-            <input className="createtittle" type="text" name="title" placeholder='Dish Name' defaultValue={recipe.title}/><br />
+          <input className="createtittle" type="text" name="title" placeholder='Dish Name' defaultValue={recipe.title} /><br />
 
             <label htmlFor="category" />
           <select
@@ -68,25 +68,35 @@ export default function RecipeEdit(){
             <option value="Oceania">Oceania</option>
           </select><br />
 
-            <label hidden htmlFor="description"></label>
-            <textarea className="createdescription" type="number" name="description" placeholder='Description' defaultValue={recipe.description}></textarea><br />
+          <label hidden htmlFor="description"></label>
+          <textarea className="createdescription" type="number" name="description" placeholder='Description' defaultValue={recipe.description}></textarea><br />
 
             <label hidden htmlFor="prepTime"></label>
             <input className="createprepTime" type="number" name="prepTime" placeholder='Total Time (mins)' onChange={handleChange} value={formData.prepTime} /><br />
 
-            <label hidden htmlFor="ingredients"></label>
-            <input className="createingredients" type="text" name="ingredients" placeholder='Ingredients' defaultValue={recipe.ingredients} /><br />
+          <label hidden htmlFor="ingredients"></label>
+          <input className="createingredients" type="text" name="ingredients" placeholder='Ingredients' defaultValue={recipe.ingredients} /><br />
 
-            <label hidden htmlFor="poster"></label>
-            <input className="createposter" type="text" name="poster" placeholder='poster' defaultValue={recipe.poster}/><br />
+          <label hidden htmlFor="method"></label>
+          <textarea className="createmethod" name="method" placeholder='method' defaultValue={recipe.method}></textarea><br />
 
-            <label hidden htmlFor="method"></label>
-            <textarea className="createmethod" name="method" placeholder='method' defaultValue={recipe.method}></textarea><br />
 
-            <ImageUploadField setFormData={setFormData} formData={formData} />
-            
-            {res && <p className="danger">{res.data.message}</p>}
-            <button className="createbtn" type="submit">Edit</button><br />
+          <div>
+            <img src={recipe.poster} className="preview" alt="poster" defaultValue={recipe.poster} /><br /><br />
+
+            <div className="row">
+              <div className="col-md-8">
+                <ImageUploadField setFormData={setFormData} formData={formData} />
+              </div>
+              <div className="col-md-4 d-flex align-items-center justify-content-end">
+                <button className="btn btn-primary createbtn" type="submit">Complete</button>
+              </div>
+            </div><br />
+
+            {res && <p className="dangerincreate">{res.data.message}</p>}
+
+          </div>
+
         </div>
       </Form>
     </>
