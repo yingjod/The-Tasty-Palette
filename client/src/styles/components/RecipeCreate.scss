@@ -44,24 +44,46 @@
   height: 200px;
 }
 
-.createbtn{
-  @include button;
+.createbtn,
+.custom-file-upload{
+  background-color: #FF7C5E;
+  border-radius: 5px;
   height: 50px;
   width: 150px;
   font-size: 20px;
+  color: white;
+  border:none;
+  text-align: center; 
+
+}
+
+input[type="file"] {
+  display: none;
 }
 
 .createbtn:hover {
   background-color: darkblue; /* Change color on hover */
 }
 
+.custom-file-upload:hover{
+  background-color: green; /* Change color on hover */
+}
+
 .createbtn:active {
   transform: translate(1px, 1px); /* Move button 2px down on click */
 }
 
-.upload-and-submit {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
+.custom-file-upload{
+  padding-left: 20px ;
+  background-color: #f72b5b;
 }
+
+.preview{
+  width: 250px;;
+}
+.dangerincreate{
+  color: red;
+  max-width: 500px;
+}
+
+
