@@ -7,17 +7,17 @@ import textlogo from '../images/text-logo.png'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 export default function Home() {
-  const [recipes, setRecipes] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [recipes, setRecipes] = useState([])
+  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
     async function fetchRecipes() {
       try {
-        const data = await getAllRecipes();
+        const data = await getAllRecipes()
         console.log(data)
         setRecipes(data)
       } catch (error) {
-        console.error('Error fetching recipes:', error);
+        console.error('Error fetching recipes:', error)
       } finally {
         setLoading(false);
       }

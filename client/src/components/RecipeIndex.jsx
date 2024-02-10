@@ -1,53 +1,48 @@
+
 import { useLoaderData, Link } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import textrecipe from '../images/text-recipes.png'
 import renderStars from './Stars.jsx'
-
 export default function Recipes() {
   const recipe = useLoaderData()
-
   //! State
   const [ filters, setFilters ] = useState({
     category: 'All',
     search: ''
   })
-
   const [ selectedRating, setSelectedRating ] = useState('All')
-
   const [ categories, setCategories ] = useState([])
   const [ filteredCategories, setFilteredCategories ] = useState([])
-
   //! Functions
   function handleChange(e){
     if (e.target.name === 'rating') {
+      // console.log('Rating dropdown changed')
       setSelectedRating(e.target.value)
     } else {
       const newObj = {
         ...filters,
         [e.target.name]: e.target.value
       }
+      // console.log('Other dropdown or input changed:', newObj)
       setFilters(newObj)
-    }  
+    }
   }
-
   //! Effects
   useEffect(() => {
-
     const pattern = new RegExp(filters.search, 'i')
     const filteredArray = recipe.filter(rec => {
+      // console.log('avg', typeof rec.avgRating, rec.avgRating)
+      // console.log('sl', typeof selectedRating, selectedRating)
       return pattern.test(rec.title) && (rec.category === filters.category || filters.category === 'All') &&
-      (selectedRating === 'All' || parseFloat(rec.avgRating) === parseFloat(selectedRating))
-      
+      (selectedRating === 'All' || Math.round(parseFloat(rec.avgRating)) === Math.round(parseFloat(selectedRating)))
     })
+    console.log('Filtered Array:', filteredArray)
     setFilteredCategories(filteredArray)
-
     if (recipe.length > 0 && categories.length === 0) {
       const categoriesArr = [...new Set(recipe.map(rec => rec.category))].filter(Boolean)
       setCategories(categoriesArr)
     }
   }, [filters, selectedRating])
-
-
     return (
       <>
         <img src={textrecipe} className="textrecipe"></img>
@@ -56,8 +51,8 @@ export default function Recipes() {
             <select id="dropdown" name="category" value={filters.category} onChange={handleChange}>
               <option value="All" default>Continents</option>
               { categories.length > 0 &&
-                categories.map(category => {
-                  return <option key={category} value={category}>{category}</option>
+                categories.map((category, index)=> {
+                  return <option key={index} value={category}>{category}</option>
                 })
               }
             </select>
@@ -88,12 +83,32 @@ export default function Recipes() {
                     <div className="stars">{renderStars(avgRating)}</div>
                     <p className="text-center card-text">Total Time: {prepTime}</p>
                   </div>
-                </div> 
+                </div>
               </Link>
           )
         })}
-        </div> 
+        </div>
       </>
     )
   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
